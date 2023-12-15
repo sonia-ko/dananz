@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+}
+
+.navContainer {
+  display: flex;
+  column-gap: 3em;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  column-gap: 2rem;
+  align-items: center;
+  align-content: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}

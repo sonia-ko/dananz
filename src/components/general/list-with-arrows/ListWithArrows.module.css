@@ -1,0 +1,14 @@
+.text-small {
+  font-size: 1.5rem;
+}
+
+.container {
+  /* width: 90%; */
+}
+.item {
+  padding-left: 20px;
+}
+
+.itemWrapper {
+  display: flex;
+}

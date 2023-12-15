@@ -1,0 +1,53 @@
+.container {
+  /* width: 100%; */
+  position: relative;
+}
+
+.headerContainer {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding-bottom: 2.5rem;
+}
+.image {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 60 vh;
+}
+
+.copy {
+  position: relative;
+  align-self: flex-end;
+  display: flex;
+  width: 60%;
+  padding-bottom: 2rem;
+  justify-content: flex-end;
+}
+
+.copyText {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.numbersBlockContainer {
+  position: absolute;
+  right: 20%;
+  top: 20%;
+  width: 16rem;
+}
+
+.heading {
+  width: 40%;
+  font-size: 4.5rem;
+  text-shadow: 2px 1px 2px rgba(110, 97, 97, 0.5);
+}
+
+.copy::before {
+  content: "";
+  position: absolute;
+  top: -5rem;
+  right: 0;
+  width: 110%;
+  height: 2px;
+  background-color: #000;
+}

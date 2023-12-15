@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 3.5rem 0 2rem;
+  align-items: flex-end;
+}
+
+.authorContainer {
+  position: absolute;
+  top: 2rem;
+  left: 65%;
+  background-color: var(--white-color);
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 50% 50%;
+  column-gap: 1.25rem;
+  padding: 1rem 2rem;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.image {
+  min-width: 70%;
+  max-width: 55.188rem;
+  min-height: 60vh;
+  max-height: 33rem;
+  object-fit: cover;
+}
+
+.quoteTextContainer {
+  width: 20%;
+  padding-bottom: 5rem;
+}
+
+.quoteText {
+  padding-bottom: 2rem;
+}
+
+.quoteImage {
+  grid-column: 1 / 2;
+  grid-row: 1 / span 2;
+}
+
+.authorName {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
