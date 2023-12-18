@@ -4,7 +4,7 @@ import Layout from "@/components/layout/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function ContactUs() {
+export default function Materials() {
   return (
     <>
       <Head>
@@ -15,7 +15,7 @@ export default function ContactUs() {
       </Head>
       <Layout>
         <div className="container">
-          <h1> Contact Us - will be soon </h1>
+          <h1> Materials - will be soon </h1>
         </div>
       </Layout>
     </>

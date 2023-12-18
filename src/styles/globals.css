@@ -6,6 +6,7 @@
   --blue-color: #2c3878;
   --white-color: #ffff;
   --grayscale-color: #333333;
+  --gray-medium-color: #3c3c3c;
   --light-gray-color: #9c9c9c;
 }
 
@@ -33,6 +34,11 @@ button {
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif;
+  background-color: transparent;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 a {
@@ -46,6 +52,10 @@ h1 {
   font-size: 4.5rem;
   padding: 0;
   margin: 0;
+}
+
+h2 {
+  font-weight: 400;
 }
 
 h3 {
@@ -73,4 +83,8 @@ h4 {
 
 .margin-m {
   margin: 2rem 0;
+}
+
+.margin-s {
+  margin: 1.5rem 0;
 }

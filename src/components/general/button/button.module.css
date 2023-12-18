@@ -2,3 +2,7 @@
   background-color: var(--blue-color);
   color: var(--white-color);
 }
+
+.transparent {
+  border: 1px solid var(--gray-medium-color);
+}

@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.p {
+  width: 20%;
+  color: var(--light-gray-color);
+  font-size: 1.125rem;
+}
+
+.heading {
+  width: 25%;
+}

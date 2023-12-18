@@ -13,6 +13,8 @@
   max-width: 100%;
   min-width: 100%;
   min-height: 60 vh;
+  width: auto;
+  height: auto;
 }
 
 .copy {

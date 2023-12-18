@@ -1,11 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Layout from "@/components/layout/Layout";
 import MainBanner from "@/components/home/main-banner/mainBanner";
 import AboutSummary from "@/components/home/about-summary/AboutSummary";
 import ServiceList from "@/components/home/services-list/ServiceList";
+import ProductSummary from "@/components/general/product-summary/ProductSummary";
+import MaterialSummary from "@/components/home/material-summary/MaterialSummary";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,8 @@ export default function Home() {
         <MainBanner />
         <AboutSummary />
         <ServiceList />
+        <ProductSummary />
+        <MaterialSummary />
       </Layout>
     </>
   );

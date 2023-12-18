@@ -24,7 +24,7 @@ const MainBanner: React.FC = () => {
         src="/home/kitchen.png"
         alt="Dananz"
         priority={false}
-      ></Image>
+      />
 
       <div className={classes.numbersBlockContainer}>
         <NumbersBlock />

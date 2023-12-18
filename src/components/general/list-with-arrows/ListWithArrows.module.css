@@ -1,14 +1,47 @@
-.text-small {
-  font-size: 1.5rem;
-}
-
 .container {
-  /* width: 90%; */
-}
-.item {
-  padding-left: 20px;
+  padding: 0;
+  counter-reset: list-counter;
+  list-style: none;
+  margin: 3rem 0;
 }
 
 .itemWrapper {
   display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.title {
+  margin: 1.5rem 0;
+}
+.title:hover {
+  cursor: pointer;
+  color: var(--grayscale-color);
+}
+
+.item {
+  counter-increment: list-counter;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item::before {
+  content: counter(list-counter, decimal-leading-zero);
+  font-weight: 600;
+  width: 10%;
+  margin: 1.5rem 0;
+}
+
+.description {
+  font-size: 1.125rem;
+  width: 70%;
+  color: var(--grayscale-color);
+}
+
+.text-small {
+  font-size: 1.5rem;
+}
+
+.text-xl {
+  font-size: 2rem;
 }

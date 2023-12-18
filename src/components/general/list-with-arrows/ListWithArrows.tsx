@@ -6,7 +6,7 @@ import ArrowRight from "../icons/ArrowRight";
 
 interface ListItem {
   title: string;
-  desctiption?: string;
+  description?: string;
   id: string;
 }
 
@@ -19,17 +19,22 @@ const ListWithArrows: React.FC<ListWithArrowsProps> = ({
   listItems,
   textSize,
 }) => {
-  const h2class = textSize === "s" ? "text-small" : "";
+  const h2class = textSize === "s" ? "text-small" : "text-xl";
 
   return (
     <ol className={`${classes.container} ${classes[h2class]}`}>
       {listItems.map((el) => {
+        console.log(el.description);
         return (
           <li className={classes.item} key={el.id}>
             <div className={classes.itemWrapper}>
               <div>
-                <h4 className={classes[h2class]}>{el.title}</h4>
-                {el.desctiption && <p>{el.desctiption}</p>}
+                <h4 className={`${classes[h2class]} ${classes.title}`}>
+                  {el.title}
+                </h4>
+                {el.description && (
+                  <p className={classes.description}>{el.description}</p>
+                )}
               </div>
               <ArrowRight onClick={() => {}} />
             </div>

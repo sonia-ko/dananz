@@ -18,16 +18,16 @@ const ArrowRight: React.FC<ArrowLeftProps> = ({ onClick }) => {
         <path
           d="M6.66699 16H25.3337"
           stroke="black"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M16 6.66666L25.3333 16L16 25.3333"
           stroke="black"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </button>

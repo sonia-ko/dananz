@@ -16,13 +16,15 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <header className={`${classes.container} container`}>
       <div>
-        <Image
-          width={126}
-          height={54}
-          src="/general/logo.png"
-          alt="Dananz"
-          priority={false}
-        ></Image>
+        <Link href="/">
+          <Image
+            width={126}
+            height={54}
+            src="/general/logo.png"
+            alt="Dananz"
+            priority={false}
+          />
+        </Link>
       </div>
       <div className={classes.navContainer}>
         <nav className={classes.nav}>
