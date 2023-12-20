@@ -1,18 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap");
 
 :root {
-  --primary-color: #3498db;
+  --primary-color: #2c3878;
   --secondary-color: #2ecc71;
   --blue-color: #2c3878;
+  --light-blue-color: #566093;
   --white-color: #ffff;
   --grayscale-color: #333333;
   --gray-medium-color: #3c3c3c;
   --light-gray-color: #9c9c9c;
+  --extra-light-gray-color: #d9d9d9;
+  --black-color: #141414;
 }
 
 body {
   font-family: "Poppins", sans-serif;
 }
+
 html,
 body,
 p,
@@ -73,6 +77,19 @@ h4 {
   font-weight: 600;
 }
 
+input {
+  font-family: inherit;
+  font-size: 1rem;
+}
+input::placeholder {
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+label {
+  font-size: 1.125rem;
+}
+
 .text-gray {
   color: var(--light-gray-color);
   font-size: 1.125rem;
@@ -101,6 +118,10 @@ h4 {
 
 .text-white {
   color: var(--white-color);
+}
+
+.text-size-s {
+  font-size: 1.125rem;
 }
 
 .text-size-m {

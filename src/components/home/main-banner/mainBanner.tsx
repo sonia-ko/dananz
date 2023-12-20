@@ -23,6 +23,7 @@ const MainBanner: React.FC = () => {
         height="513"
         src="/home/kitchen.png"
         alt="Dananz"
+        layout="responsive"
         priority={false}
       />
 

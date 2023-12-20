@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  column-gap: 20%;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}

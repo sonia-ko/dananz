@@ -5,19 +5,24 @@ import Image from "next/image";
 import Logo from "../logo/Logo";
 import Button from "../button/button";
 import { useRouter } from "next/router";
+import FooterForm from "./FooterForm";
+import SocialIconsContainer from "./SocialIconsContainer";
 
 const Footer: React.FC = () => {
   const router = useRouter();
 
   return (
     <div className="container">
-      <footer>
+      <footer className={classes.container}>
         <div>
           <Logo />
-          <p>One of the best furniture agency.</p>
+          <p className="text-size-m text-semibold text-gray-dark margin-s">
+            One of the best furniture agency.
+          </p>
         </div>
-        <div>
-          
+        <div className={classes.rightCol}>
+          <FooterForm />
+          <SocialIconsContainer />
         </div>
       </footer>
     </div>
