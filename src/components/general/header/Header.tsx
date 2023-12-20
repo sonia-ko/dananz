@@ -3,6 +3,7 @@ import classes from "./Header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../button/button";
+import Logo from "../logo/Logo";
 import { useRouter } from "next/router";
 
 interface HeaderProps {
@@ -15,17 +16,8 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header className={`${classes.container} container`}>
-      <div>
-        <Link href="/">
-          <Image
-            width={126}
-            height={54}
-            src="/general/logo.png"
-            alt="Dananz"
-            priority={false}
-          />
-        </Link>
-      </div>
+      <Logo />
+
       <div className={classes.navContainer}>
         <nav className={classes.nav}>
           <ul className={classes.navList}>
@@ -40,13 +32,14 @@ const Header: React.FC<HeaderProps> = () => {
             </li>
           </ul>
         </nav>
+
         <Button
           btnText="Contact Us"
           onClick={() => {
             router.push("/contact-us/");
           }}
           btnStyle="blue"
-        ></Button>
+        />
       </div>
     </header>
   );

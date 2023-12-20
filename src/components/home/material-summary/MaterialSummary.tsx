@@ -15,9 +15,11 @@ const MaterialSummary: React.FC = () => {
     <section className={`${classes.container} container`}>
       <Subheading text="MATERIAL" />
       <div className={classes.contentContainer}>
-        <div>
-          <h3>choice of materials for quality furniture.</h3>
-          <p className="margin-s">
+        <div className={classes.columnLeftContainer}>
+          <h3 className={classes.heading}>
+            choice of materials for quality furniture.
+          </h3>
+          <p className="margin-s text-gray">
             You can custom the material as desired. And our furniture uses the
             best materials and selected quality materials.
           </p>
@@ -38,6 +40,7 @@ const MaterialSummary: React.FC = () => {
             alt="Wood"
             priority={false}
           />
+
           <Image
             className={classes.image2}
             width="241"
@@ -46,6 +49,7 @@ const MaterialSummary: React.FC = () => {
             alt="Wood"
             priority={false}
           />
+
           <Image
             className={classes.image3}
             width="194"

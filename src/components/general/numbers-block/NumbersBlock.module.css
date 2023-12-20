@@ -21,3 +21,16 @@
 .textLarge {
   font-size: 3.25rem;
 }
+
+@media (min-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 576px) {
+}

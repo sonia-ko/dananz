@@ -12,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Header />
       <main>{children}</main>
       {/* Other common components or footer can also be placed here */}
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

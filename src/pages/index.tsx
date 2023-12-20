@@ -7,6 +7,7 @@ import AboutSummary from "@/components/home/about-summary/AboutSummary";
 import ServiceList from "@/components/home/services-list/ServiceList";
 import ProductSummary from "@/components/general/product-summary/ProductSummary";
 import MaterialSummary from "@/components/home/material-summary/MaterialSummary";
+import CallToAction from "@/components/general/call-to-action/CallToAction";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function Home() {
         <ServiceList />
         <ProductSummary />
         <MaterialSummary />
+        <CallToAction />
       </Layout>
     </>
   );

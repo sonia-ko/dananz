@@ -1,0 +1,36 @@
+.container {
+  background-color: var(--blue-color);
+  margin-bottom: 3.5rem;
+}
+
+.containerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto 0;
+}
+
+.columnLeft {
+  width: 55%;
+}
+
+.columnRight {
+  width: 35%;
+}
+
+@media (min-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+  .containerInner {
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+}
