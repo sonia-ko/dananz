@@ -1,0 +1,13 @@
+.container {
+  background-color: var(--primary-color);
+  position: relative;
+}
+
+.textContainer {
+  position: absolute;
+  background-color: var(--white-color);
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}

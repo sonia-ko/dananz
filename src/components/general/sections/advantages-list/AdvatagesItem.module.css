@@ -1,0 +1,30 @@
+.container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid var(--extra-light-gray-color);
+  align-items: center;
+}
+
+.container::before {
+  content: "";
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  background-color: var(--extra-light-gray-color);
+}
+
+@media (min-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+}

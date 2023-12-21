@@ -1,0 +1,28 @@
+.container {
+}
+
+.contentContainer {
+  display: grid;
+  grid-template-columns: 70% 20%;
+  column-gap: 10%;
+  margin-top: 3rem;
+}
+
+.heading {
+  width: 60%;
+}
+@media (min-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    grid-template-columns: 100%;
+  }
+}
+@media (max-width: 576px) {
+}

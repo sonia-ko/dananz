@@ -1,6 +1,10 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import Layout from "@/components/layout/Layout";
+import ProductSummary from "@/components/general/sections/product-summary/ProductSummary";
+import CallToAction from "@/components/general/sections/call-to-action/CallToAction";
+import SecondaryBanner from "@/components/general/sections/secondary-banner/SecondaryBanner";
+import AchievementsList from "@/components/services/achievements-list/AchievementsList";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +18,14 @@ export default function Services() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className="container">
-          <h1> Services - will be soon </h1>
-        </div>
+        <SecondaryBanner
+          image={{ src: "/services/living-room.png", alt: "Living room" }}
+          title="Services"
+          paragraph="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+        />
+        <AchievementsList />
+        <ProductSummary />
+        <CallToAction />
       </Layout>
     </>
   );

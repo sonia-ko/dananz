@@ -1,0 +1,35 @@
+import React from "react";
+
+import Link from "next/link";
+import Image from "next/image";
+import Subheading from "@/components/general/subheading/Subheading";
+import classes from "./OurTeam.module.css";
+import TeamMemberBlock from "./TeamMemberBlock";
+import { staff } from "@/static/companyData";
+
+const OurTeam: React.FC = () => {
+  return (
+    <section className={`${classes.container} container`}>
+      <Subheading text="Designer" />
+      <h3>Creative Person</h3>
+      <p className={`${classes.p} text-gray line-height-m`}>
+        Customize your interior design into a dream place with the best
+        designers and quality furniture. We try our best to fulfill your
+        expectations.
+      </p>
+      <ul className={classes.contentContainer}>
+        {staff.map((el) => {
+          return (
+            <TeamMemberBlock
+              imgSrc={el.img}
+              title={el.title}
+              employeeName={el.employeeName}
+            />
+          );
+        })}
+      </ul>
+    </section>
+  );
+};
+
+export default OurTeam;

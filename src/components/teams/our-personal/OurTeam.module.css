@@ -1,0 +1,13 @@
+.p {
+  width: 40%;
+}
+
+.container {
+}
+
+.contentContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2.5rem;
+  row-gap: 2.5rem;
+}

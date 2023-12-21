@@ -5,9 +5,9 @@ import Layout from "@/components/layout/Layout";
 import MainBanner from "@/components/home/main-banner/mainBanner";
 import AboutSummary from "@/components/home/about-summary/AboutSummary";
 import ServiceList from "@/components/home/services-list/ServiceList";
-import ProductSummary from "@/components/general/product-summary/ProductSummary";
+import ProductSummary from "@/components/general/sections/product-summary/ProductSummary";
 import MaterialSummary from "@/components/home/material-summary/MaterialSummary";
-import CallToAction from "@/components/general/call-to-action/CallToAction";
+import CallToAction from "@/components/general/sections/call-to-action/CallToAction";
 
 const inter = Inter({ subsets: ["latin"] });
 
