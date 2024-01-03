@@ -11,3 +11,32 @@
   column-gap: 2.5rem;
   row-gap: 2.5rem;
 }
+
+@media (min-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+  .contentContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .contentContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .p {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .p {
+    width: 80%;
+  }
+}
+@media (max-width: 576px) {
+  .contentContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

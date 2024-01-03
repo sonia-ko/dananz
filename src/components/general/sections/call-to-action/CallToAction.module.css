@@ -30,6 +30,15 @@
 @media (max-width: 768px) {
   .containerInner {
     flex-direction: column;
+    row-gap: 1.5rem;
+  }
+
+  .columnLeft {
+    width: 100%;
+  }
+
+  .columnRight {
+    width: 100%;
   }
 }
 @media (max-width: 576px) {

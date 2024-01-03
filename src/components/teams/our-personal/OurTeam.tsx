@@ -11,8 +11,10 @@ const OurTeam: React.FC = () => {
   return (
     <section className={`${classes.container} container`}>
       <Subheading text="Designer" />
-      <h3>Creative Person</h3>
-      <p className={`${classes.p} text-gray line-height-m`}>
+      <h3 className="margin-b-m">Creative Person</h3>
+      <p
+        className={`${classes.p} text-gray text-size-s line-height-m margin-b-l `}
+      >
         Customize your interior design into a dream place with the best
         designers and quality furniture. We try our best to fulfill your
         expectations.

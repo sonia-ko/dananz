@@ -19,7 +19,7 @@ const MaterialSummary: React.FC = () => {
           <h3 className={classes.heading}>
             choice of materials for quality furniture.
           </h3>
-          <p className="margin-s text-gray">
+          <p className="margin-s text-gray text-size-s">
             You can custom the material as desired. And our furniture uses the
             best materials and selected quality materials.
           </p>

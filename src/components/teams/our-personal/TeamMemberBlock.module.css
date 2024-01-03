@@ -1,13 +1,17 @@
 .container {
   background-color: var(--primary-color);
   position: relative;
+  display: flex;
+  align-items: flex-end;
 }
 
 .textContainer {
   position: absolute;
   background-color: var(--white-color);
-  bottom: 3rem;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 95%;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
 }

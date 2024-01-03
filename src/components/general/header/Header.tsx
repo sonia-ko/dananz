@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "../button/button";
 import Logo from "../logo/Logo";
+import MenuMobile from "../menu-mobile/MenuMobile";
 import { useRouter } from "next/router";
 
 interface HeaderProps {
@@ -40,6 +41,10 @@ const Header: React.FC<HeaderProps> = () => {
           }}
           btnStyle="blue"
         />
+      </div>
+
+      <div className={classes.mobileNavContainer}>
+        <MenuMobile />
       </div>
     </header>
   );

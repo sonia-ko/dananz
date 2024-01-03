@@ -28,7 +28,7 @@ const ParagraphWithImageAndTitle: React.FC<ParagraphWithImageAndTitleProps> = ({
 
       <div className={classes.textContainer}>
         <h5>{title}</h5>
-        <p className="text-gray">{description}</p>
+        <p className="text-gray text-size-s">{description}</p>
       </div>
     </div>
   );

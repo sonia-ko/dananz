@@ -22,6 +22,10 @@
   align-items: center;
 }
 
+.mobileNavContainer {
+  display: none;
+}
+
 @media (min-width: 1400px) {
 }
 
@@ -30,7 +34,18 @@
 @media (max-width: 992px) {
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .navContainer {
+    display: none;
+  }
+
+  .mobileNavContainer {
+    display: block;
+  }
+
+  .container {
+    align-items: center;
+  }
 }
 @media (min-width: 576px) {
 }

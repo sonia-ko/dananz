@@ -12,12 +12,12 @@ const CallToAction: React.FC = () => {
     <section className={classes.container}>
       <div className={`${classes.containerInner} container`}>
         <p
-          className={`${classes.columnLeft} text-white text-size-m text-semibold`}
+          className={`${classes.columnLeft} text-white text-size-l text-semibold`}
         >
           let's discuss making your interior like a dream place!
         </p>
         <div className={classes.columnRight}>
-          <p className="text-gray margin-s">
+          <p className="text-gray text-size-s margin-s">
             Contact us below to work together to build your amazing interior
           </p>
           <Button

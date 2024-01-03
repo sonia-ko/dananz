@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
       <footer className={classes.container}>
         <div>
           <Logo />
-          <p className="text-size-m text-semibold text-gray-dark margin-s">
+          <p className="text-size-l text-semibold text-gray-dark margin-s">
             One of the best furniture agency.
           </p>
         </div>

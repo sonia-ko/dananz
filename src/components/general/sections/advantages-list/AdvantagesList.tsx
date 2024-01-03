@@ -26,7 +26,7 @@ const AdvantagesList: React.FC = () => {
   return (
     <section className={`${classes.container} container`}>
       <Subheading text="Why Choose Us" />
-      <p className={`${classes.p} text-gray line-height-m`}>
+      <p className={`${classes.p} text-gray text-size-s line-height-m`}>
         Customize your interior design into a dream place with the best
         designers and quality furniture. We try our best to fulfill your
         expectations.
@@ -34,7 +34,11 @@ const AdvantagesList: React.FC = () => {
       <ul className={classes.list}>
         {advantages.map((el) => {
           return (
-            <AdvantagesItem title={el.title} description={el.description} />
+            <AdvantagesItem
+              key={el.title}
+              title={el.title}
+              description={el.description}
+            />
           );
         })}
       </ul>

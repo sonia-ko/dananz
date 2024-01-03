@@ -17,7 +17,7 @@ const ServiceList: React.FC = () => {
     <section className={`${classes.container} container`}>
       <Subheading text="Service" />
       <h3>attractive furniture with the best quality.</h3>
-      <p className={`${classes.paragraph} text-gray margin-m`}>
+      <p className={`${classes.paragraph} text-gray text-size-s margin-m`}>
         Customize your interior design into a dream place with the best
         designers and quality furniture. We try our best to fulfill your
         expectations.

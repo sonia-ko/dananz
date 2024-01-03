@@ -26,8 +26,8 @@ const TeamMemberBlock: React.FC<TeamMemberBlockProps> = ({
         priority={false}
       />
       <div className={classes.textContainer}>
-        <p>{employeeName}</p>
-        <p>{title}</p>
+        <p className="text-size-m text-semibold">{employeeName}</p>
+        <p className="text-gray">{title}</p>
       </div>
     </li>
   );

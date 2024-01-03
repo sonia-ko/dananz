@@ -30,7 +30,9 @@ const QuotationWithImage: React.FC<QuotationWithImageProps> = ({
       />
 
       <div className={classes.quoteTextContainer}>
-        <p className={`${classes.quoteText} text-gray`}>{quoteText}</p>
+        <p className={`${classes.quoteText} text-gray text-size-s`}>
+          {quoteText}
+        </p>
         <Button
           onClick={() => {}}
           btnStyle="blue"
@@ -49,7 +51,7 @@ const QuotationWithImage: React.FC<QuotationWithImageProps> = ({
         />
 
         <p className={classes.authorName}>{quoteAuthor.authorName}</p>
-        <p className="text-gray">{quoteAuthor.title}</p>
+        <p className="text-gray text-size-s">{quoteAuthor.title}</p>
       </div>
     </div>
   );
