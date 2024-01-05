@@ -15,6 +15,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  z-index: 0;
 }
 
 html,
@@ -88,10 +89,17 @@ h5 {
 input {
   font-family: inherit;
   font-size: 1rem;
+  border: 1px solid var(--light-gray-color);
+  padding: 1rem;
 }
+
 input::placeholder {
   font-size: 1rem;
   font-family: inherit;
+}
+
+input:focus {
+  outline: none;
 }
 
 label {
@@ -100,7 +108,6 @@ label {
 
 .text-gray {
   color: var(--light-gray-color);
-  /* font-size: 1.125rem; */
 }
 
 .text-gray-dark {
@@ -110,10 +117,6 @@ label {
 .container {
   width: 90%;
   margin: 0 auto 3.5rem;
-}
-
-.margin-s {
-  margin: 1rem 0;
 }
 
 .margin-m {
@@ -151,6 +154,10 @@ label {
   font-size: 2.25rem;
 }
 
+.text-size-xl {
+  font-size: 3.25rem;
+}
+
 .text-semibold {
   font-weight: 600;
 }
@@ -161,6 +168,10 @@ label {
 
 .line-height-m {
   line-height: 1.8;
+}
+
+.p-narrow {
+  width: 40%;
 }
 
 @media (min-width: 1400px) {
@@ -184,7 +195,29 @@ label {
     margin: 1rem 0 1.5rem;
     font-size: 1.25rem;
   }
+
+  section {
+    padding: 2.5rem 0;
+    margin: 2.5rem 0;
+  }
+
+  .container {
+    margin: 0 auto 3rem;
+  }
+
+  .margin-s {
+    margin: 0.85rem 0;
+  }
+
+  .text-size-xl {
+    font-size: 3rem;
+  }
+
+  .p-narrow {
+    width: 50%;
+  }
 }
+
 @media (max-width: 992px) {
   h1 {
     font-size: 3.5rem;
@@ -202,6 +235,27 @@ label {
   h5 {
     margin: 1rem 0 1.5rem;
     font-size: 1.15rem;
+  }
+
+  section {
+    padding: 2rem 0;
+    margin: 2rem 0;
+  }
+
+  .container {
+    margin: 0 auto 2.5rem;
+  }
+
+  .margin-s {
+    margin: 0.75rem 0;
+  }
+
+  .text-size-xl {
+    font-size: 2.5rem;
+  }
+
+  .p-narrow {
+    width: 60%;
   }
 }
 
@@ -221,6 +275,30 @@ label {
   h5 {
     margin: 0.75rem 0 1.25rem;
   }
+
+  section {
+    padding: 1.75rem 0;
+    margin: 1.75rem 0;
+  }
+
+  .container {
+    margin: 0 auto 2rem;
+  }
+
+  .margin-s {
+    margin: 0.5rem 0;
+  }
+
+  .text-size-xl {
+    font-size: 2rem;
+  }
+
+  .p-narrow {
+    width: 70%;
+  }
 }
 @media (max-width: 576px) {
+  .p-narrow {
+    width: 80%;
+  }
 }

@@ -9,19 +9,6 @@
   column-gap: 3em;
 }
 
-.navList {
-  display: flex;
-  list-style: none;
-  column-gap: 2rem;
-  align-items: center;
-  align-content: center;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-}
-
 .mobileNavContainer {
   display: none;
 }
@@ -39,12 +26,12 @@
     display: none;
   }
 
-  .mobileNavContainer {
-    display: block;
+  .container {
+    align-items: center;
   }
 
   .container {
-    align-items: center;
+    position: relative;
   }
 }
 @media (min-width: 576px) {

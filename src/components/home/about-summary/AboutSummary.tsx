@@ -1,7 +1,7 @@
 import React from "react";
 import Subheading from "@/components/general/subheading/Subheading";
 import Image from "next/image";
-import QuotationWithImage from "@/components/general/quotation-with-image/QuotationWithImage";
+import QuotationWithImage from "@/components/general/blocks/quotation-with-image/QuotationWithImage";
 
 import classes from "./AboutSummary.module.css";
 

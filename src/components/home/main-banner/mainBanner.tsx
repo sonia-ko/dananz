@@ -1,7 +1,8 @@
 import React from "react";
-import classes from "./mainBanner.module.css";
 import Image from "next/image";
 import NumbersBlock from "@/components/general/numbers-block/NumbersBlock";
+
+import classes from "./mainBanner.module.css";
 
 const MainBanner: React.FC = () => {
   return (

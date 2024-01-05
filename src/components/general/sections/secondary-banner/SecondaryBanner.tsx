@@ -19,7 +19,7 @@ const SecondaryBanner: React.FC<SecondaryBannerProps> = ({
   return (
     <section className={`${classes.container} container`}>
       <h1>{title}</h1>
-      <p className={`${classes.p} text-size-s`}>{paragraph}</p>
+      <p className={`${classes.p} text-size-s p-narrow`}>{paragraph}</p>
       <Image
         layout="responsive"
         className={classes.image}

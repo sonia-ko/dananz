@@ -1,7 +1,7 @@
 import React from "react";
 import Subheading from "@/components/general/subheading/Subheading";
 import ListWithArrows from "@/components/general/list-with-arrows/ListWithArrows";
-import HeadingWithParahgraph from "../../heading-with-paragraph/HeadingWithParahgraph";
+import HeadingWithParahgraph from "../../blocks/heading-with-paragraph/HeadingWithParahgraph";
 
 import classes from "./ProductSummary.module.css";
 

@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20%;
+  padding-top: 3rem;
 }
 
 .rightCol {

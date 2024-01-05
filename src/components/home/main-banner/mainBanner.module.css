@@ -1,5 +1,4 @@
 .container {
-  /* width: 100%; */
   position: relative;
 }
 
@@ -8,11 +7,13 @@
   position: relative;
   justify-content: space-between;
   padding-bottom: 2.5rem;
+  align-items: flex-start;
 }
+
 .image {
   max-width: 100%;
   min-width: 100%;
-  min-height: 60 vh;
+  min-height: 60vh;
   width: auto;
   height: auto;
 }
@@ -42,6 +43,7 @@
   width: 40%;
   font-size: 4.5rem;
   text-shadow: 2px 1px 2px rgba(110, 97, 97, 0.5);
+  position: relative;
 }
 
 .copy::before {
@@ -58,11 +60,27 @@
 }
 
 @media (max-width: 1200px) {
+  .heading {
+    font-size: 4.25rem;
+  }
 }
 @media (max-width: 992px) {
+  .heading {
+    font-size: 4rem;
+  }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .copy::before {
+    top: -7rem;
+  }
 }
-@media (min-width: 576px) {
+@media (max-width: 576px) {
+  .heading {
+    font-size: 3rem;
+  }
 }

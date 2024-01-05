@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./QuotationWithImage.module.css";
 import Image from "next/image";
-import Button from "../button/button";
+import Button from "../../button/button";
 
 interface QuotationWithImageProps {
   image: { src: string; alt: string };

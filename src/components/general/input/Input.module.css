@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+}
+
+.label,
+.input {
+  width: 100%;
+}
+
+.label {
+  font-weight: 500;
+}

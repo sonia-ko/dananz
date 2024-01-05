@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import ArrowHalf from "../icons/ArrowHalf";
-import Ellipse from "../icons/Ellipse";
-import IconFacebook from "../icons/IconFacebook";
-import IconInstagram from "../icons/IconInstagram";
-import IconTikTok from "../icons/IconTiktok";
-import IconYoutube from "../icons/IconYoutube";
+import ArrowHalf from "../../icons/ArrowHalf";
+import Ellipse from "../../icons/Ellipse";
+import IconFacebook from "../../icons/IconFacebook";
+import IconInstagram from "../../icons/IconInstagram";
+import IconTikTok from "../../icons/IconTiktok";
+import IconYoutube from "../../icons/IconYoutube";
 
 import classes from "./SocialIconsContainer.module.css";
 

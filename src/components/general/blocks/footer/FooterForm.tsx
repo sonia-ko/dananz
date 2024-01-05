@@ -1,21 +1,21 @@
 import { databaseURL } from "@/config/databaseConfig";
 
 import React, { useState } from "react";
-import ArrowHalf from "../icons/ArrowHalf";
-import Ellipse from "../icons/Ellipse";
-
+import ArrowHalf from "../../icons/ArrowHalf";
+import Ellipse from "../../icons/Ellipse";
+import { validateEmail } from "@/helpers/validateEmail";
 import classes from "./FooterForm.module.css";
 
 const NodeName = "subscribers";
 
-const validateEmail = (email: string): boolean => {
-  const validFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const containsDissallowedSymbols = /[!#$%&*\/=?'+`|{}~]/.test(email);
+// const validateEmail = (email: string): boolean => {
+//   const validFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+//   const containsDissallowedSymbols = /[!#$%&*\/=?'+`|{}~]/.test(email);
 
-  const emailValid = validFormat && !containsDissallowedSymbols;
+//   const emailValid = validFormat && !containsDissallowedSymbols;
 
-  return emailValid;
-};
+//   return emailValid;
+// };
 
 const checkEmailExists = async (email: string): Promise<boolean> => {
   try {

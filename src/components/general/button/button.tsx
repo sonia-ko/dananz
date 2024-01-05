@@ -5,7 +5,7 @@ import arrowAfterIcon from "../../../assets/general/icon-arrow-right.png";
 
 interface ButtonProps {
   btnText: string;
-  onClick: () => void;
+  onClick?: () => void;
   btnStyle: "blue" | "gray" | "transparent" | "white";
   type?: "button" | "submit";
 }
@@ -16,7 +16,6 @@ const Button: React.FC<ButtonProps> = ({
   btnStyle,
   type = "button",
 }) => {
-  console.log(btnStyle);
   return (
     <button
       type={type}

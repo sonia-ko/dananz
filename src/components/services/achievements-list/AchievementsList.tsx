@@ -2,7 +2,7 @@ import React from "react";
 import Subheading from "@/components/general/subheading/Subheading";
 import classes from "./AchievementsList.module.css";
 import { companyAchievements } from "@/static/companyData";
-import ParagraphWithImageAndTitle from "@/components/general/paragraph-with-image-and-title/ParagraphWithImageAndTitle";
+import ParagraphWithImageAndTitle from "@/components/general/blocks/paragraph-with-image-and-title/ParagraphWithImageAndTitle";
 
 const AchievementsList: React.FC = () => {
   return (

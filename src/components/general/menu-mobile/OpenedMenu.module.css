@@ -1,0 +1,12 @@
+.container {
+  /* position: relative; */
+}
+.itemsContainer {
+  height: 90vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 6rem;
+  background-color: #ffff !important;
+  z-index: 10;
+}
