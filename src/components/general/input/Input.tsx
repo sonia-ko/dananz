@@ -9,6 +9,7 @@ interface InputProps {
   placeholder?: string;
   type: "text" | "tel" | "email" | "textarea";
   id: string;
+  className?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -17,16 +18,27 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   type,
   id,
+  className,
 }) => {
   if (type === "textarea") {
-    <textarea
-      ref={inputRef as React.RefObject<HTMLTextAreaElement>}
-      placeholder={placeholder}
-    />;
+    console.log("this is textarea");
+
+    return (
+      <div className={`${classes.container} ${className}`}>
+        <label className={classes.label} htmlFor={id}>
+          {label}
+        </label>
+        <textarea
+          ref={inputRef as React.RefObject<HTMLTextAreaElement>}
+          placeholder={placeholder}
+          className={classes.input}
+        />
+      </div>
+    );
   }
 
   return (
-    <div className={classes.container}>
+    <div className={`${classes.container} ${className}`}>
       <label className={classes.label} htmlFor={id}>
         {label}
       </label>

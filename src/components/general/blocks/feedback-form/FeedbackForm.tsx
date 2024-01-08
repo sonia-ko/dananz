@@ -9,8 +9,16 @@ import classes from "./FeedbackForm.module.css";
 
 const NodeName = "feedbacks";
 
+type feedback = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: number;
+  message: string;
+};
+
 const FeedbackForm: React.FC = () => {
-  const [email, setEmail] = useState<string>("");
+  const [error, setError] = useState(false);
 
   const firstNameInputRef = useRef<HTMLInputElement | null>(null);
   const lastNameInputRef = useRef<HTMLInputElement | null>(null);
@@ -44,53 +52,67 @@ const FeedbackForm: React.FC = () => {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
+    // setEmail(e.target.value);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(firstNameInputRef.current?.value);
+
+    const feedback = {};
   };
 
   return (
     <form className={classes.container} onSubmit={handleSubmit}>
-      <Input
-        type="text"
-        label="First Name"
-        placeholder="First Name"
-        id="firstName"
-        inputRef={firstNameInputRef}
+      <div className={classes.inputsContainer}>
+        <Input
+          className={classes.item1}
+          type="text"
+          label="First Name"
+          placeholder="First Name"
+          id="firstName"
+          inputRef={firstNameInputRef}
+        />
+        <Input
+          className={classes.item2}
+          type="text"
+          label="Last Name"
+          placeholder="Last Name"
+          id="lastName"
+          inputRef={lastNameInputRef}
+        />
+        <Input
+          className={classes.item3}
+          type="email"
+          label="Email"
+          placeholder="Email"
+          id="userEmail"
+          inputRef={emailInputRef}
+        />
+        <Input
+          className={classes.item4}
+          type="tel"
+          label="Phone Number"
+          placeholder="Phone Number"
+          id="userTel"
+          inputRef={phoneInputRef}
+        />
+        <Input
+          className={classes.item5}
+          type="textarea"
+          label="Message"
+          placeholder="Your Message"
+          id="userMsg"
+          inputRef={msgInputRef}
+        />
+      </div>
+
+      <Button
+        className={classes.button}
+        btnText="Send Message"
+        btnStyle="blue"
+        type="submit"
       />
-      <Input
-        type="text"
-        label="Last Name"
-        placeholder="Last Name"
-        id="lastName"
-        inputRef={lastNameInputRef}
-      />
-      <Input
-        type="email"
-        label="Email"
-        placeholder="Email"
-        id="userEmail"
-        inputRef={emailInputRef}
-      />
-      <Input
-        type="tel"
-        label="Phone Number"
-        placeholder="Phone Number"
-        id="userTel"
-        inputRef={phoneInputRef}
-      />
-      <Input
-        type="textarea"
-        label="Message"
-        placeholder="Your Message"
-        id="userMsg"
-        inputRef={msgInputRef}
-      />
-      {/* <button type="submit">Submit</button> */}
-      <Button btnText="Submit" btnStyle="blue" type="submit" />
     </form>
   );
 };

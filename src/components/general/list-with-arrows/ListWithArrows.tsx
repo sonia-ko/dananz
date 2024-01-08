@@ -24,7 +24,6 @@ const ListWithArrows: React.FC<ListWithArrowsProps> = ({
   return (
     <ol className={`${classes.container} ${classes[h2class]}`}>
       {listItems.map((el) => {
-        console.log(el.description);
         return (
           <li className={classes.item} key={el.id}>
             <div className={classes.itemWrapper}>
