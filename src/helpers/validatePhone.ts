@@ -1,5 +1,5 @@
 export const validatePhone = (phone: string): boolean => {
-  const regex = /^[\d()+]+$/;
+  const regex = /^[\d()+\s]+$/;
   const trimmedNumber = phone.trim();
 
   if (!regex.test(trimmedNumber)) {

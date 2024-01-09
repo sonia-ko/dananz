@@ -51,6 +51,10 @@
   margin: 0 auto;
 }
 
+.error {
+  color: var(--red-color);
+}
+
 @media (max-width: 768px) {
   .container {
     margin: 0 auto;

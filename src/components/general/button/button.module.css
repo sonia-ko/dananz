@@ -3,6 +3,11 @@
   color: var(--white-color);
 }
 
+.blue:disabled {
+  background-color: var(--gray-medium-color);
+  cursor: not-allowed;
+}
+
 .transparent {
   border: 1px solid var(--gray-medium-color);
 }

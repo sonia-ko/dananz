@@ -6,6 +6,7 @@ import Button from "../../button/button";
 import { validateEmail } from "@/helpers/validateEmail";
 import { validateName } from "@/helpers/validateName";
 import { validatePhone } from "@/helpers/validatePhone";
+import { validateTextArea } from "@/helpers/validateTextArea";
 
 import classes from "./FeedbackForm.module.css";
 
@@ -22,7 +23,8 @@ type feedback = {
 type inputTypes = "firstName" | "phone" | "email" | "message" | "lastName";
 
 const FeedbackForm: React.FC = () => {
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -30,11 +32,12 @@ const FeedbackForm: React.FC = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
 
-  const firstNameInputRef = useRef<HTMLInputElement | null>(null);
-  const lastNameInputRef = useRef<HTMLInputElement | null>(null);
-  const emailInputRef = useRef<HTMLInputElement | null>(null);
-  const phoneInputRef = useRef<HTMLInputElement | null>(null);
-  const msgInputRef = useRef<HTMLInputElement | null>(null);
+  const emailValid = validateEmail(email);
+  const phoneValid = validatePhone(phoneNumber) || phoneNumber === "";
+  const nameValid = validateName(firstName);
+  const msgValid = validateTextArea(message);
+
+  const buttonEnabled = emailValid && phoneValid && nameValid && msgValid;
 
   const handleInputChange = (inputType: inputTypes, value: string) => {
     switch (inputType) {
@@ -42,16 +45,15 @@ const FeedbackForm: React.FC = () => {
         setFirstName(value);
         break;
       case "email":
-        if (validateEmail(value)) {
-          setEmail(value);
-        }
-
+        setEmail(value);
         break;
       case "phone":
         setPhoneNumber(value);
         break;
       case "lastName":
         setLastName(value);
+      case "message":
+        setMessage(value);
       default:
         break;
     }
@@ -88,7 +90,6 @@ const FeedbackForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(firstNameInputRef.current?.value);
 
     const feedback = {
       firstName,
@@ -107,12 +108,13 @@ const FeedbackForm: React.FC = () => {
         <Input
           className={classes.item1}
           type="text"
+          valid={nameValid || firstName === ""}
           label="First Name"
           placeholder="First Name"
           id="firstName"
           required={true}
-          inputRef={firstNameInputRef}
           onChange={(value: string) => handleInputChange("firstName", value)}
+          tooltip="Please indicate only letters in this field"
         />
         <Input
           className={classes.item2}
@@ -121,7 +123,6 @@ const FeedbackForm: React.FC = () => {
           placeholder="Last Name"
           id="lastName"
           required={false}
-          inputRef={lastNameInputRef}
           onChange={(value: string) => handleInputChange("lastName", value)}
         />
         <Input
@@ -131,8 +132,9 @@ const FeedbackForm: React.FC = () => {
           placeholder="Email"
           id="userEmail"
           required={true}
-          inputRef={emailInputRef}
           onChange={(value: string) => handleInputChange("email", value)}
+          valid={emailValid || email === ""}
+          tooltip="Please enter your email in the following format: 'email@domain.tld'"
         />
         <Input
           className={classes.item4}
@@ -141,8 +143,9 @@ const FeedbackForm: React.FC = () => {
           placeholder="Phone Number"
           id="userTel"
           required={false}
-          inputRef={phoneInputRef}
+          valid={phoneValid || phoneNumber === ""}
           onChange={(value: string) => handleInputChange("phone", value)}
+          tooltip="Please include only numbers or + sign in your phone number"
         />
         <Input
           className={classes.item5}
@@ -151,16 +154,25 @@ const FeedbackForm: React.FC = () => {
           placeholder="Your Message"
           id="userMsg"
           required={true}
-          inputRef={msgInputRef}
           onChange={(value: string) => handleInputChange("message", value)}
+          valid={msgValid}
         />
       </div>
+
+      {error && (
+        <p
+          className={`${classes.error} text-size-m text-semibold text-centered margin-m`}
+        >
+          Ooops, something went wrong! Please try again later
+        </p>
+      )}
 
       <Button
         className={classes.button}
         btnText="Send Message"
         btnStyle="blue"
         type="submit"
+        disabled={!buttonEnabled}
       />
     </form>
   );

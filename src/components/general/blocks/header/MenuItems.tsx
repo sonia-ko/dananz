@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./MenuItems.module.css";
 import Link from "next/link";
 import Button from "../../button/button";
+import { menuItems } from "@/static/websiteData";
 
 import { useRouter } from "next/router";
 
@@ -12,21 +13,25 @@ const MenuItems: React.FC = () => {
     <>
       <nav className={classes.nav}>
         <ul className={classes.navList}>
-          <li className={classes.li}>
-            <Link href="/about-us/">About Us</Link>
-          </li>
-          <li className={classes.li}>
-            <Link href="/services/">Services</Link>
-          </li>
-          <li className={classes.li}>
-            <Link href="/our-teams/">Our Teams</Link>
-          </li>
+          {menuItems.map((item) => {
+            return (
+              <li className={classes.li}>
+                <Link
+                  onClick={() => (document.body.style.overflow = "auto")}
+                  href={item.url}
+                >
+                  {item.title}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
 
       <Button
         btnText="Contact Us"
         onClick={() => {
+          document.body.style.overflow = "auto";
           router.push("/contact-us/");
         }}
         btnStyle="blue"
