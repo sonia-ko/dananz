@@ -4,6 +4,8 @@ import React, { useState, useRef } from "react";
 import Input from "../../input/Input";
 import Button from "../../button/button";
 import { validateEmail } from "@/helpers/validateEmail";
+import { validateName } from "@/helpers/validateName";
+import { validatePhone } from "@/helpers/validatePhone";
 
 import classes from "./FeedbackForm.module.css";
 
@@ -17,14 +19,43 @@ type feedback = {
   message: string;
 };
 
+type inputTypes = "firstName" | "phone" | "email" | "message" | "lastName";
+
 const FeedbackForm: React.FC = () => {
   const [error, setError] = useState(false);
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
 
   const firstNameInputRef = useRef<HTMLInputElement | null>(null);
   const lastNameInputRef = useRef<HTMLInputElement | null>(null);
   const emailInputRef = useRef<HTMLInputElement | null>(null);
   const phoneInputRef = useRef<HTMLInputElement | null>(null);
   const msgInputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleInputChange = (inputType: inputTypes, value: string) => {
+    switch (inputType) {
+      case "firstName":
+        setFirstName(value);
+        break;
+      case "email":
+        if (validateEmail(value)) {
+          setEmail(value);
+        }
+
+        break;
+      case "phone":
+        setPhoneNumber(value);
+        break;
+      case "lastName":
+        setLastName(value);
+      default:
+        break;
+    }
+  };
 
   const saveEmailToDatabase = async (email: string): Promise<void> => {
     // try {
@@ -51,15 +82,23 @@ const FeedbackForm: React.FC = () => {
     // }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // setEmail(e.target.value);
-  };
+  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   // setEmail(e.target.value);
+  // };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(firstNameInputRef.current?.value);
 
-    const feedback = {};
+    const feedback = {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      message,
+    };
+
+    console.log(feedback);
   };
 
   return (
@@ -71,7 +110,9 @@ const FeedbackForm: React.FC = () => {
           label="First Name"
           placeholder="First Name"
           id="firstName"
+          required={true}
           inputRef={firstNameInputRef}
+          onChange={(value: string) => handleInputChange("firstName", value)}
         />
         <Input
           className={classes.item2}
@@ -79,7 +120,9 @@ const FeedbackForm: React.FC = () => {
           label="Last Name"
           placeholder="Last Name"
           id="lastName"
+          required={false}
           inputRef={lastNameInputRef}
+          onChange={(value: string) => handleInputChange("lastName", value)}
         />
         <Input
           className={classes.item3}
@@ -87,7 +130,9 @@ const FeedbackForm: React.FC = () => {
           label="Email"
           placeholder="Email"
           id="userEmail"
+          required={true}
           inputRef={emailInputRef}
+          onChange={(value: string) => handleInputChange("email", value)}
         />
         <Input
           className={classes.item4}
@@ -95,7 +140,9 @@ const FeedbackForm: React.FC = () => {
           label="Phone Number"
           placeholder="Phone Number"
           id="userTel"
+          required={false}
           inputRef={phoneInputRef}
+          onChange={(value: string) => handleInputChange("phone", value)}
         />
         <Input
           className={classes.item5}
@@ -103,7 +150,9 @@ const FeedbackForm: React.FC = () => {
           label="Message"
           placeholder="Your Message"
           id="userMsg"
+          required={true}
           inputRef={msgInputRef}
+          onChange={(value: string) => handleInputChange("message", value)}
         />
       </div>
 
