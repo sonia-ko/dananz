@@ -15,7 +15,7 @@ const MenuItems: React.FC = () => {
         <ul className={classes.navList}>
           {menuItems.map((item) => {
             return (
-              <li className={classes.li}>
+              <li className={classes.li} key={item.title}>
                 <Link
                   onClick={() => (document.body.style.overflow = "auto")}
                   href={item.url}

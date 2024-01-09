@@ -7,6 +7,7 @@ import { validateEmail } from "@/helpers/validateEmail";
 import { validateName } from "@/helpers/validateName";
 import { validatePhone } from "@/helpers/validatePhone";
 import { validateTextArea } from "@/helpers/validateTextArea";
+import { acceptedPhoneFormats } from "@/static/websiteData";
 
 import classes from "./FeedbackForm.module.css";
 
@@ -16,14 +17,21 @@ type feedback = {
   firstName: string;
   lastName: string;
   email: string;
-  phoneNumber: number;
+  phoneNum: string;
   message: string;
+  selectedCountry: string;
 };
 
-type inputTypes = "firstName" | "phone" | "email" | "message" | "lastName";
+type inputTypes =
+  | "firstName"
+  | "phone"
+  | "email"
+  | "message"
+  | "lastName"
+  | "select";
 
 const FeedbackForm: React.FC = () => {
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const [firstName, setFirstName] = useState("");
@@ -31,11 +39,20 @@ const FeedbackForm: React.FC = () => {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("US");
+
+  const selectedCountryRef = useRef<HTMLSelectElement>(null);
 
   const emailValid = validateEmail(email);
   const phoneValid = validatePhone(phoneNumber) || phoneNumber === "";
   const nameValid = validateName(firstName);
   const msgValid = validateTextArea(message);
+
+  console.log("Email valid: " + email + " " + emailValid);
+  console.log("phone valid: " + phoneValid);
+  console.log("name valid: " + nameValid);
+  console.log("msg valid: " + msgValid);
+  console.log("Email: " + email);
 
   const buttonEnabled = emailValid && phoneValid && nameValid && msgValid;
 
@@ -52,14 +69,18 @@ const FeedbackForm: React.FC = () => {
         break;
       case "lastName":
         setLastName(value);
+        break;
       case "message":
         setMessage(value);
+        break;
+      case "select":
+        setSelectedCountry(value);
       default:
         break;
     }
   };
 
-  const saveEmailToDatabase = async (email: string): Promise<void> => {
+  const saveFeedbackToDatabase = async (email: string): Promise<void> => {
     // try {
     //   const emailExists = await checkEmailExists(email);
     //   if (!emailExists) {
@@ -90,13 +111,17 @@ const FeedbackForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const phoneNum = phoneNumber.replace(/\D/g, "");
+    const numericNumber = parseInt(phoneNum, 10);
 
-    const feedback = {
+    console.log(numericNumber);
+    const feedback: feedback = {
       firstName,
       lastName,
       email,
-      phoneNumber,
+      phoneNum,
       message,
+      selectedCountry,
     };
 
     console.log(feedback);
@@ -146,6 +171,10 @@ const FeedbackForm: React.FC = () => {
           valid={phoneValid || phoneNumber === ""}
           onChange={(value: string) => handleInputChange("phone", value)}
           tooltip="Please include only numbers or + sign in your phone number"
+          selectOptions={acceptedPhoneFormats}
+          selectedOption={selectedCountry}
+          onSelectChange={(value: string) => handleInputChange("select", value)}
+          selectRef={selectedCountryRef}
         />
         <Input
           className={classes.item5}
@@ -155,7 +184,7 @@ const FeedbackForm: React.FC = () => {
           id="userMsg"
           required={true}
           onChange={(value: string) => handleInputChange("message", value)}
-          valid={msgValid}
+          valid={msgValid || message === ""}
         />
       </div>
 

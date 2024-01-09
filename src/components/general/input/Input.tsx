@@ -2,10 +2,10 @@ import React from "react";
 import classes from "./Input.module.css";
 import { Tooltip } from "react-tooltip";
 
-import arrowAfterIcon from "../../../assets/general/icon-arrow-right.png";
-
 interface InputProps {
-  inputRef?: React.RefObject<HTMLInputElement | HTMLTextAreaElement>;
+  inputRef?: React.RefObject<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  >;
   label: string;
   placeholder?: string;
   type: "text" | "tel" | "email" | "textarea";
@@ -16,6 +16,9 @@ interface InputProps {
   onChange?: (value: string) => void;
   tooltip?: string;
   selectOptions?: string[];
+  selectedOption?: string;
+  onSelectChange?: (value: string) => void;
+  selectRef?: React.RefObject<HTMLSelectElement>;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -30,6 +33,8 @@ const Input: React.FC<InputProps> = ({
   onChange = () => {},
   tooltip,
   selectOptions,
+  selectedOption,
+  onSelectChange = () => {},
 }) => {
   const handleChange = (
     e:
@@ -40,9 +45,15 @@ const Input: React.FC<InputProps> = ({
     onChange(inputValue);
   };
 
-  if (type === "textarea") {
-    console.log("this is textarea");
+  const handleSelectChange: React.ChangeEventHandler<HTMLSelectElement> = (
+    e
+  ) => {
+    const inputValue = e.target.value;
+    console.log("select value:" + inputValue);
+    onSelectChange(inputValue);
+  };
 
+  if (type === "textarea") {
     return (
       <div className={`${classes.container} ${className}`}>
         <label
@@ -66,6 +77,45 @@ const Input: React.FC<InputProps> = ({
   }
 
   if (type === "tel") {
+    return (
+      <div className={`${classes.container} ${className}`}>
+        <label
+          className={classes.label}
+          htmlFor={id}
+          data-tooltip-id={id}
+          data-tooltip-content={tooltip}
+        >
+          {label}
+          {required && "*"}
+        </label>
+        <Tooltip id={id} />
+        <div className={`${classes.phoneInputContainer} input`}>
+          <select
+            id={"country" + id}
+            name={"country" + id}
+            value={selectedOption}
+            onChange={handleSelectChange}
+          >
+            {selectOptions?.map((item) => {
+              return (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              );
+            })}
+          </select>
+          <input
+            onChange={handleChange}
+            className={`${classes.phoneInput} ${!valid && classes.invalid}`}
+            type={type}
+            id={id}
+            ref={inputRef as React.RefObject<HTMLInputElement>}
+            placeholder={placeholder}
+            required={required}
+          />
+        </div>
+      </div>
+    );
   }
 
   return (
