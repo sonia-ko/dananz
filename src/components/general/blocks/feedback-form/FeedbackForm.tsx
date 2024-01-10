@@ -1,6 +1,6 @@
 import { databaseURL } from "@/config/databaseConfig";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Input from "../../input/Input";
 import Button from "../../button/button";
 import { validateEmail } from "@/helpers/validateEmail";
@@ -32,7 +32,7 @@ type inputTypes =
 
 const FeedbackForm: React.FC = () => {
   const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -41,18 +41,10 @@ const FeedbackForm: React.FC = () => {
   const [message, setMessage] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("US");
 
-  const selectedCountryRef = useRef<HTMLSelectElement>(null);
-
   const emailValid = validateEmail(email);
   const phoneValid = validatePhone(phoneNumber) || phoneNumber === "";
   const nameValid = validateName(firstName);
   const msgValid = validateTextArea(message);
-
-  console.log("Email valid: " + email + " " + emailValid);
-  console.log("phone valid: " + phoneValid);
-  console.log("name valid: " + nameValid);
-  console.log("msg valid: " + msgValid);
-  console.log("Email: " + email);
 
   const buttonEnabled = emailValid && phoneValid && nameValid && msgValid;
 
@@ -80,34 +72,14 @@ const FeedbackForm: React.FC = () => {
     }
   };
 
-  const saveFeedbackToDatabase = async (email: string): Promise<void> => {
-    // try {
-    //   const emailExists = await checkEmailExists(email);
-    //   if (!emailExists) {
-    //     await fetch(`${databaseURL}/${NodeName}.json?`, {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({ email }),
-    //     });
-    //     console.log("Email added successfully!");
-    //     setMessage("Thank you for subscribing to our newsletters!");
-    //   } else {
-    //     console.log(`Email ${email} already exists in the database.`);
-    //     setMessage("You have already been subscribed to our newsletters!");
-    //   }
-    //   setTimeout(() => {
-    //     setMessage("");
-    //   }, 4000);
-    // } catch (error) {
-    //   console.error("Error saving email:", error);
-    // }
+  const cleanFormInputs = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhoneNumber("");
+    setMessage("");
+    setSelectedCountry("UA");
   };
-
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   // setEmail(e.target.value);
-  // };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -124,7 +96,31 @@ const FeedbackForm: React.FC = () => {
       selectedCountry,
     };
 
-    console.log(feedback);
+    try {
+      await fetch(`${databaseURL}/${NodeName}.json?`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ feedback }),
+      });
+
+      setMessage("Thank you for your feedback!");
+      cleanFormInputs();
+      setShowSuccessMessage(true);
+
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 4000);
+    } catch (error) {
+      console.error("Error saving form:", error);
+    }
+  };
+
+  const selectObj = {
+    selectOptions: acceptedPhoneFormats,
+    selectedOption: selectedCountry,
+    onSelectChange: (value: string) => handleInputChange("select", value),
   };
 
   return (
@@ -132,6 +128,7 @@ const FeedbackForm: React.FC = () => {
       <div className={classes.inputsContainer}>
         <Input
           className={classes.item1}
+          value={firstName}
           type="text"
           valid={nameValid || firstName === ""}
           label="First Name"
@@ -148,12 +145,14 @@ const FeedbackForm: React.FC = () => {
           placeholder="Last Name"
           id="lastName"
           required={false}
+          value={lastName}
           onChange={(value: string) => handleInputChange("lastName", value)}
         />
         <Input
           className={classes.item3}
           type="email"
           label="Email"
+          value={email}
           placeholder="Email"
           id="userEmail"
           required={true}
@@ -167,14 +166,12 @@ const FeedbackForm: React.FC = () => {
           label="Phone Number"
           placeholder="Phone Number"
           id="userTel"
+          value={phoneNumber}
           required={false}
           valid={phoneValid || phoneNumber === ""}
           onChange={(value: string) => handleInputChange("phone", value)}
           tooltip="Please include only numbers or + sign in your phone number"
-          selectOptions={acceptedPhoneFormats}
-          selectedOption={selectedCountry}
-          onSelectChange={(value: string) => handleInputChange("select", value)}
-          selectRef={selectedCountryRef}
+          select={selectObj}
         />
         <Input
           className={classes.item5}
@@ -182,6 +179,7 @@ const FeedbackForm: React.FC = () => {
           label="Message"
           placeholder="Your Message"
           id="userMsg"
+          value={message}
           required={true}
           onChange={(value: string) => handleInputChange("message", value)}
           valid={msgValid || message === ""}
@@ -193,6 +191,14 @@ const FeedbackForm: React.FC = () => {
           className={`${classes.error} text-size-m text-semibold text-centered margin-m`}
         >
           Ooops, something went wrong! Please try again later
+        </p>
+      )}
+
+      {showSuccessMessage && (
+        <p
+          className={`${classes.successMsg} text-size-m text-semibold text-centered margin-m`}
+        >
+          Thank you for submitting your feedback!
         </p>
       )}
 

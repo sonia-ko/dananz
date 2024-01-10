@@ -15,13 +15,17 @@ interface InputProps {
   valid?: boolean;
   onChange?: (value: string) => void;
   tooltip?: string;
-  selectOptions?: string[];
-  selectedOption?: string;
-  onSelectChange?: (value: string) => void;
-  selectRef?: React.RefObject<HTMLSelectElement>;
+  value?: string;
+  select?: {
+    selectOptions: string[];
+    selectedOption: string;
+    onSelectChange: (value: string) => void;
+    // selectRef?: React.RefObject<HTMLSelectElement>;
+  };
 }
 
 const Input: React.FC<InputProps> = ({
+  value,
   inputRef,
   label,
   placeholder,
@@ -32,9 +36,7 @@ const Input: React.FC<InputProps> = ({
   valid = true,
   onChange = () => {},
   tooltip,
-  selectOptions,
-  selectedOption,
-  onSelectChange = () => {},
+  select,
 }) => {
   const handleChange = (
     e:
@@ -48,9 +50,11 @@ const Input: React.FC<InputProps> = ({
   const handleSelectChange: React.ChangeEventHandler<HTMLSelectElement> = (
     e
   ) => {
-    const inputValue = e.target.value;
-    console.log("select value:" + inputValue);
-    onSelectChange(inputValue);
+    if (select) {
+      const inputValue = e.target.value;
+      console.log("select value:" + inputValue);
+      select.onSelectChange(inputValue);
+    }
   };
 
   if (type === "textarea") {
@@ -71,12 +75,13 @@ const Input: React.FC<InputProps> = ({
           placeholder={placeholder}
           onChange={handleChange}
           className={`${classes.input} ${!valid && classes.invalid}`}
+          value={value}
         />
       </div>
     );
   }
 
-  if (type === "tel") {
+  if (type === "tel" && select) {
     return (
       <div className={`${classes.container} ${className}`}>
         <label
@@ -93,10 +98,10 @@ const Input: React.FC<InputProps> = ({
           <select
             id={"country" + id}
             name={"country" + id}
-            value={selectedOption}
+            value={select.selectedOption}
             onChange={handleSelectChange}
           >
-            {selectOptions?.map((item) => {
+            {select.selectOptions.map((item) => {
               return (
                 <option key={item} value={item}>
                   {item}
@@ -104,6 +109,7 @@ const Input: React.FC<InputProps> = ({
               );
             })}
           </select>
+
           <input
             onChange={handleChange}
             className={`${classes.phoneInput} ${!valid && classes.invalid}`}
@@ -112,6 +118,7 @@ const Input: React.FC<InputProps> = ({
             ref={inputRef as React.RefObject<HTMLInputElement>}
             placeholder={placeholder}
             required={required}
+            value={value}
           />
         </div>
       </div>
@@ -130,6 +137,7 @@ const Input: React.FC<InputProps> = ({
         {required && "*"}
       </label>
       <Tooltip id={id} />
+
       <input
         onChange={handleChange}
         className={`${classes.input} ${!valid && classes.invalid}`}
@@ -138,6 +146,7 @@ const Input: React.FC<InputProps> = ({
         ref={inputRef as React.RefObject<HTMLInputElement>}
         placeholder={placeholder}
         required={required}
+        value={value}
       />
     </div>
   );

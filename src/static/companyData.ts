@@ -64,3 +64,29 @@ export const companyAchievements = [
       "Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.",
   },
 ];
+
+export const ourLocations = [
+  {
+    title: "Jakarta",
+    description:
+      "Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.",
+  },
+  {
+    title: "Surakarta",
+    description:
+      "Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.",
+  },
+  {
+    title: "Yogyakarta",
+    description:
+      "Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.",
+  },
+  {
+    title: "Bandung",
+    description:
+      "Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.",
+  },
+];
+
+export const dananzEmail = "dananz@gmail.com";
+export const dananzPhone = "+62 815 002 1000";

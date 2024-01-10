@@ -8,15 +8,6 @@ import classes from "./FooterForm.module.css";
 
 const NodeName = "subscribers";
 
-// const validateEmail = (email: string): boolean => {
-//   const validFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-//   const containsDissallowedSymbols = /[!#$%&*\/=?'+`|{}~]/.test(email);
-
-//   const emailValid = validFormat && !containsDissallowedSymbols;
-
-//   return emailValid;
-// };
-
 const checkEmailExists = async (email: string): Promise<boolean> => {
   try {
     let emailFound: boolean = false;
@@ -71,11 +62,9 @@ const FooterForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateEmail(email)) {
-      console.log("Submitted email is valid:", email);
       await saveEmailToDatabase(email);
       setEmail("");
     } else {
-      console.log("Submitted email is not valid:", email);
       setMessage("Submitted Email is not valid, please double-check it");
     }
   };

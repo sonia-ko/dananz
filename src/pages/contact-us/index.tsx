@@ -4,7 +4,7 @@ import Layout from "@/components/layout/Layout";
 import CallToAction from "@/components/general/sections/call-to-action/CallToAction";
 import HeadingWithParagraphCentered from "@/components/general/blocks/heading-with-parahraph-centered/HeadingWithParagraphCentered";
 import FeedbackForm from "@/components/general/blocks/feedback-form/FeedbackForm";
-
+import Locations from "@/components/general/sections/locations/Locations";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function ContactUs() {
@@ -24,6 +24,7 @@ export default function ContactUs() {
           />
           <FeedbackForm />
         </section>
+        <Locations />
         <CallToAction />
       </Layout>
     </>

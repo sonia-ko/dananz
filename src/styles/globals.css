@@ -108,6 +108,7 @@ textarea {
   width: 100%;
 }
 
+textarea:focus,
 select:focus,
 input:focus {
   outline: none;
@@ -122,10 +123,13 @@ select {
   margin-right: 1rem;
   font-family: inherit;
   font-size: inherit;
+  padding: 0 0.75rem;
+  background-color: transparent;
 }
 
 option {
   margin: 0.5rem;
+  background-color: transparent;
 }
 .text-gray {
   color: var(--light-gray-color);
