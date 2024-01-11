@@ -131,6 +131,7 @@ option {
   margin: 0.5rem;
   background-color: transparent;
 }
+
 .text-gray {
   color: var(--light-gray-color);
 }
@@ -154,6 +155,10 @@ option {
 
 .margin-t-m {
   margin-top: 2rem;
+}
+
+.margin-b-s {
+  margin-bottom: 1.5rem;
 }
 
 .margin-b-m {
@@ -241,6 +246,10 @@ option {
   .p-narrow {
     width: 50%;
   }
+
+  .margin-b-s {
+    margin-bottom: 1.25rem;
+  }
 }
 
 @media (max-width: 992px) {
@@ -282,6 +291,10 @@ option {
   .p-narrow {
     width: 60%;
   }
+
+  .margin-b-s {
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -320,6 +333,10 @@ option {
 
   .p-narrow {
     width: 70%;
+  }
+
+  .margin-b-s {
+    margin-bottom: 0.75rem;
   }
 }
 @media (max-width: 576px) {

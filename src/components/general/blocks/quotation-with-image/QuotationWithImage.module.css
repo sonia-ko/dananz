@@ -23,10 +23,12 @@
 }
 
 .image {
-  min-width: 70%;
-  max-width: 55.188rem;
-  min-height: 60vh;
-  max-height: 33rem;
+  /* min-width: 70%; */
+  /* max-width: 55.188rem; */
+  max-width: 70%;
+  /* min-height: 60vh;
+  max-height: 33rem; */
+  max-height: 525px;
   object-fit: cover;
 }
 
@@ -49,6 +51,15 @@
   font-weight: 600;
 }
 
+.imgRightContainer .image {
+  order: 1;
+}
+
+.imgRightContainer .authorContainer {
+  top: 2rem;
+  left: 15%;
+}
+
 @media (min-width: 1400px) {
 }
 
@@ -57,7 +68,10 @@
 @media (max-width: 992px) {
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 }
 @media (min-width: 576px) {
 }

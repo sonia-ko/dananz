@@ -1,2 +1,45 @@
-.itemContainer {
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headingBlock {
+  width: 30%;
+}
+
+.locationsList {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .headingBlock {
+    width: 100%;
+  }
+
+  .locationsList {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
 }

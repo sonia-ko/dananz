@@ -2,30 +2,44 @@ import React from "react";
 import classes from "./QuotationWithImage.module.css";
 import Image from "next/image";
 import Button from "../../button/button";
+import { useRouter } from "next/router";
 
 interface QuotationWithImageProps {
   image: { src: string; alt: string };
   quoteText: string;
+  linkTo: string;
   quoteAuthor: {
     authorName: string;
     title: string;
     imageSrc: string;
   };
+  btnText?: string;
+  imgOnTheLeft?: boolean;
 }
 
 const QuotationWithImage: React.FC<QuotationWithImageProps> = ({
   quoteText,
   quoteAuthor,
+  linkTo,
   image,
+  btnText = "Learn More",
+  imgOnTheLeft = true,
 }) => {
+  const router = useRouter();
+
   return (
-    <div className={classes.container}>
+    <div
+      className={`${classes.container} ${
+        !imgOnTheLeft && classes.imgRightContainer
+      }`}
+    >
       <Image
         className={classes.image}
         width="883"
         height="525"
         src={image.src}
         alt={image.alt}
+        layout="responsive"
         priority={false}
       />
 
@@ -34,10 +48,12 @@ const QuotationWithImage: React.FC<QuotationWithImageProps> = ({
           {quoteText}
         </p>
         <Button
-          onClick={() => {}}
+          onClick={() => {
+            router.push(linkTo);
+          }}
           btnStyle="blue"
-          btnText="Learn More"
-        ></Button>
+          btnText={btnText}
+        />
       </div>
 
       <div className={classes.authorContainer}>

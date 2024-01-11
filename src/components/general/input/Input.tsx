@@ -20,7 +20,6 @@ interface InputProps {
     selectOptions: string[];
     selectedOption: string;
     onSelectChange: (value: string) => void;
-    // selectRef?: React.RefObject<HTMLSelectElement>;
   };
 }
 

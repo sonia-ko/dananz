@@ -8,9 +8,9 @@ import classes from "./ServiceList.module.css";
 
 const ServiceList: React.FC = () => {
   const listItems = [
-    { title: "Interior Design", id: "a1" },
-    { title: "Consultant", id: "a2" },
-    { title: "Construction Consultant", id: "a3" },
+    { title: "Interior Design", id: "a1", linkTo: "/portfolio/" },
+    { title: "Consultant", id: "a2", linkTo: "/contact-us/" },
+    { title: "Construction Consultant", id: "a3", linkTo: "/contact-us/" },
   ];
 
   return (

@@ -1,13 +1,13 @@
 import React from "react";
-import classes from "./ListWithArrows.module.css";
-import Image from "next/image";
-import Button from "../button/button";
+import { useRouter } from "next/router";
 import ArrowRight from "../icons/ArrowRight";
+import classes from "./ListWithArrows.module.css";
 
 interface ListItem {
   title: string;
   description?: string;
   id: string;
+  linkTo?: string;
 }
 
 interface ListWithArrowsProps {
@@ -19,6 +19,7 @@ const ListWithArrows: React.FC<ListWithArrowsProps> = ({
   listItems,
   textSize,
 }) => {
+  const router = useRouter();
   const h2class = textSize === "s" ? "text-small" : "text-xl";
 
   return (
@@ -26,7 +27,10 @@ const ListWithArrows: React.FC<ListWithArrowsProps> = ({
       {listItems.map((el) => {
         return (
           <li className={classes.item} key={el.id}>
-            <div className={classes.itemWrapper}>
+            <div
+              onClick={() => el.linkTo && router.push(el.linkTo)}
+              className={classes.itemWrapper}
+            >
               <div>
                 <h4 className={`${classes[h2class]} ${classes.title}`}>
                   {el.title}
@@ -35,7 +39,7 @@ const ListWithArrows: React.FC<ListWithArrowsProps> = ({
                   <p className={classes.description}>{el.description}</p>
                 )}
               </div>
-              <ArrowRight onClick={() => {}} />
+              <ArrowRight onClick={() => router.push("/portfolio/")} />
             </div>
           </li>
         );

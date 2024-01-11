@@ -1,18 +1,18 @@
 import React from "react";
-import classes from "./Locations.module.css";
+import classes from "./LocationItem.module.css";
 
-interface ListItemProps {
+interface LocationItemProps {
   title: string;
   text: string;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ title, text }) => {
+const LocationItem: React.FC<LocationItemProps> = ({ title, text }) => {
   return (
-    <li className={classes.itemContainer}>
-      <h3>{title}</h3>
-      <p>{text}</p>
+    <li className={`${classes.itemContainer} margin-b-m`}>
+      <h5 className="margin-b-m">{title}</h5>
+      <p className="text-gray text-size-s">{text}</p>
     </li>
   );
 };
 
-export default ListItem;
+export default LocationItem;

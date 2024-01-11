@@ -20,6 +20,7 @@ const AboutSummary: React.FC = () => {
           title: "CEO of Dananz",
           imageSrc: "/general/quoteauthors/argda-dananz.png",
         }}
+        linkTo="/about-us/"
         quoteText="Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere."
       />
     </section>

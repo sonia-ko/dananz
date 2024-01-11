@@ -90,3 +90,39 @@ export const ourLocations = [
 
 export const dananzEmail = "dananz@gmail.com";
 export const dananzPhone = "+62 815 002 1000";
+
+export const contactsToShow = [
+  { title: "Email", text: "dananz@gmail.com" },
+  { title: "Phone", text: "+62 815 002 1000" },
+];
+
+export const dananzServices = [
+  {
+    title: "Vintage",
+    id: "s1",
+    linkTo: "/portfolio/",
+    description:
+      "the use of simple and limited elements to get the best effect or impression.",
+  },
+  {
+    title: "Minimalist",
+    id: "s2",
+    linkTo: "/portfolio/",
+    description:
+      "the use of simple and limited elements to get the best effect or impression.",
+  },
+  {
+    title: "Modern",
+    id: "s3",
+    linkTo: "/portfolio/",
+    description:
+      "the use of simple and limited elements to get the best effect or impression.",
+  },
+  {
+    title: "Transitional",
+    id: "s4",
+    linkTo: "/portfolio/",
+    description:
+      "the use of simple and limited elements to get the best effect or impression.",
+  },
+];
