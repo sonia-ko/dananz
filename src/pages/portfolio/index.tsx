@@ -39,6 +39,7 @@ export default function OurTeams() {
                 quoteText={item.quoteText}
                 quoteAuthor={item.quoteAuthor}
                 linkTo={item.linkTo}
+                title={item.title}
                 imgOnTheLeft={i % 2 === 0}
               />
             );

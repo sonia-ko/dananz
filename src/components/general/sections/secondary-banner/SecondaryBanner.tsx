@@ -21,13 +21,16 @@ const SecondaryBanner: React.FC<SecondaryBannerProps> = ({
       <h1>{title}</h1>
       <p className={`${classes.p} text-size-s p-narrow`}>{paragraph}</p>
       <Image
-        layout="responsive"
+        // layout="responsive"
+        // fill={true}
+        sizes="100vw"
         className={classes.image}
         width="1200"
         height="513"
+        loading="lazy"
         src={image.src}
         alt={image.alt}
-        priority={false}
+        // priority={true}
       />
     </section>
   );

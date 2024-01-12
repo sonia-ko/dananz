@@ -1,40 +1,42 @@
 .container {
-  position: relative;
   display: flex;
   justify-content: space-between;
-  margin: 3.5rem 0 2rem;
+  margin: 3.5rem 0 4rem;
   align-items: flex-end;
 }
 
 .authorContainer {
   position: absolute;
   top: 2rem;
-  left: 65%;
+  left: 90%;
   background-color: var(--white-color);
   padding: 1rem 1rem;
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 50% 50%;
-  column-gap: 1.25rem;
-  padding: 1rem 2rem;
+  column-gap: 0.5rem;
+  padding: 1rem 1.5rem;
   align-items: center;
   align-content: center;
   justify-content: center;
+  box-sizing: border-box;
+  width: 18rem;
+}
+
+.imageContainer {
+  width: 65%;
+  position: relative;
 }
 
 .image {
-  /* min-width: 70%; */
-  /* max-width: 55.188rem; */
-  max-width: 70%;
-  /* min-height: 60vh;
-  max-height: 33rem; */
+  width: 100%;
+  height: auto;
   max-height: 525px;
-  object-fit: cover;
 }
 
 .quoteTextContainer {
-  width: 20%;
-  padding-bottom: 5rem;
+  width: 25%;
+  padding-bottom: 2.5rem;
 }
 
 .quoteText {
@@ -51,27 +53,226 @@
   font-weight: 600;
 }
 
-.imgRightContainer .image {
+.imgRightContainer .imageContainer {
   order: 1;
 }
 
 .imgRightContainer .authorContainer {
   top: 2rem;
-  left: 15%;
+  left: -10%;
 }
 
 @media (min-width: 1400px) {
+  .quoteTextContainer {
+    width: 20%;
+    padding-bottom: 5rem;
+  }
 }
 
 @media (max-width: 1200px) {
+  .container {
+    margin: 3rem 0 0;
+  }
+
+  .authorContainer {
+    top: 1.5rem;
+    left: 90%;
+    column-gap: 0.25rem;
+    padding: 1rem 1.25rem;
+    width: 17rem;
+  }
+
+  .imgRightContainer .authorContainer {
+    top: 1.5rem;
+  }
+
+  .imageContainer {
+    width: 70%;
+  }
+
+  .image {
+    max-height: 30rem;
+    padding-bottom: 4rem;
+  }
+
+  .quoteTextContainer {
+    width: 23%;
+    padding-bottom: 1.5rem;
+  }
+
+  .quoteText {
+    padding-bottom: 1.5rem;
+  }
 }
+
 @media (max-width: 992px) {
+  .container {
+    margin: 3rem 0 0;
+  }
+
+  .authorContainer {
+    top: 1.5rem;
+    left: 80%;
+    padding: 0.75rem 0.75rem;
+  }
+
+  .imageContainer {
+    width: 55%;
+  }
+
+  .image {
+    /* max-height: 22rem; */
+    height: 20rem;
+    object-fit: cover;
+    padding-bottom: 6rem;
+  }
+
+  .quoteTextContainer {
+    width: 36%;
+    padding-bottom: 2rem;
+  }
+
+  .quoteText {
+    padding-bottom: 1.5rem;
+  }
+
+  .authorName {
+    font-size: 1.15rem;
+  }
+
+  .imgRightContainer .authorContainer {
+    top: 1.5rem;
+    left: -20%;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    margin: 2.5rem 0 3rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .authorContainer,
+  .imgRightContainer .authorContainer {
+    left: unset;
+    right: -25%;
+    column-gap: 0.15rem;
+  }
+
+  .imageContainer {
+    width: 80%;
+    margin-bottom: 1.5rem;
+  }
+
+  .image {
+    /* min-width: 70%;
+    /* max-width: 55.188rem; */
+    /* width: 100%; */
+    /* min-height: 60vh;
+    max-height: 33rem; */
+    /* max-height: 525px;
+    object-fit: cover;  */
+    padding-bottom: 1rem;
+  }
+
+  .quoteTextContainer {
+    /* width: 20%;
+    padding-bottom: 5rem; */
+    width: 80%;
+    padding-bottom: 2.5rem;
+  }
+
+  .quoteText {
+    /* padding-bottom: 2rem; */
+  }
+
+  .quoteImage {
+    /* grid-column: 1 / 2;
+    grid-row: 1 / span 2; */
+  }
+
+  .authorName {
+    /* font-size: 1.25rem;
+    font-weight: 600; */
+  }
+
+  .imgRightContainer .imageContainer {
+    order: 0;
+  }
+
+  .imgRightContainer .authorContainer {
+    /* top: 2rem;
+    left: -10%; */
   }
 }
 @media (min-width: 576px) {
+  .container {
+    /* display: flex;
+    justify-content: space-between;
+    margin: 3.5rem 0 4rem;
+    align-items: flex-end; */
+  }
+
+  .authorContainer {
+    /* position: absolute;
+    top: 2rem;
+    left: 90%;
+    background-color: var(--white-color);
+    padding: 1rem 1rem;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50% 50%;
+    column-gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 18rem; */
+  }
+
+  .imageContainer {
+    /* width: 65%;
+    position: relative; */
+  }
+
+  .image {
+    /* min-width: 70%;
+    /* max-width: 55.188rem; */
+    /* width: 100%; */
+    /* min-height: 60vh;
+    max-height: 33rem; */
+    /* max-height: 525px;
+    object-fit: cover;  */
+  }
+
+  .quoteTextContainer {
+    /* width: 20%;
+    padding-bottom: 5rem; */
+  }
+
+  .quoteText {
+    /* padding-bottom: 2rem; */
+  }
+
+  .quoteImage {
+    /* grid-column: 1 / 2;
+    grid-row: 1 / span 2; */
+  }
+
+  .authorName {
+    /* font-size: 1.25rem;
+    font-weight: 600; */
+  }
+
+  .imgRightContainer .imageContainer {
+    /* order: 1; */
+  }
+
+  .imgRightContainer .authorContainer {
+    /* top: 2rem;
+    left: -10%; */
+  }
 }

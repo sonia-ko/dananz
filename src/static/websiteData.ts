@@ -15,45 +15,49 @@ export const homePageData = {
 export const quotations = [
   {
     id: "minimalist-room",
+    title: "Minimalist Room",
     image: { src: "/portfolio/minimalist-room.png", alt: "Minimalist Room" },
     quoteText:
       "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere.",
     linkTo: "",
     quoteAuthor: {
       authorName: "Arga Danaan",
-      title: "Minimalist Room",
+      title: "CEO of Dananz",
       imageSrc: "/general/quoteauthors/argda-dananz.png",
     },
     btnText: "See More",
   },
   {
     id: "vintage-room",
+    title: "Vintage Room",
     image: { src: "/portfolio/vintage-room.png", alt: "vintage room" },
     quoteText:
       "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere.",
     linkTo: "",
     quoteAuthor: {
       authorName: "Arga Danaan",
-      title: "Vintage Room",
+      title: "Web Developer",
       imageSrc: "/general/quoteauthors/argda-dananz.png",
     },
     btnText: "See More",
   },
   {
     id: "modern-room",
+    title: "Modern Room",
     image: { src: "/portfolio/modern-room.png", alt: "modern Room" },
     quoteText:
       "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere.",
     linkTo: "",
     quoteAuthor: {
       authorName: "Arga Danaan",
-      title: "Modern Room",
+      title: "Web Designer",
       imageSrc: "/general/quoteauthors/argda-dananz.png",
     },
     btnText: "See More",
   },
   {
     id: "transitional-room",
+    title: "Transitional Room",
     image: {
       src: "/portfolio/transitional-room.png",
       alt: "transitional Room",
@@ -63,7 +67,7 @@ export const quotations = [
     linkTo: "",
     quoteAuthor: {
       authorName: "Arga Danaan",
-      title: "Transitional Room",
+      title: "STO of Dananz",
       imageSrc: "/general/quoteauthors/argda-dananz.png",
     },
     btnText: "See More",

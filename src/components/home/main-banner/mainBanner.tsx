@@ -21,10 +21,12 @@ const MainBanner: React.FC = () => {
         className={classes.image}
         width="1200"
         height="513"
+        sizes="100vw"
         src="/home/kitchen.png"
         alt="Dananz"
-        layout="responsive"
-        priority={false}
+        // layout="responsive"
+        loading="lazy"
+        // fill={true}
       />
 
       <div className={classes.numbersBlockContainer}>
