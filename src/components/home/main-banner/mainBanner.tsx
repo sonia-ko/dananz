@@ -1,13 +1,16 @@
 import React from "react";
+
 import Image from "next/image";
+
 import NumbersBlock from "@/components/general/numbers-block/NumbersBlock";
+
 import { homePageData } from "@/static/websiteData";
 
 import classes from "./mainBanner.module.css";
 
 const MainBanner: React.FC = () => {
   return (
-    <section className={`${classes.container} container`}>
+    <section className={`${classes.container} container section`}>
       <div className={classes.headerContainer}>
         <h1 className={classes.heading}>{homePageData.h1}</h1>
         <p className={classes.copy}>
@@ -24,9 +27,7 @@ const MainBanner: React.FC = () => {
         sizes="100vw"
         src="/home/kitchen.png"
         alt="Dananz"
-        // layout="responsive"
-        loading="lazy"
-        // fill={true}
+        priority={true}
       />
 
       <div className={classes.numbersBlockContainer}>

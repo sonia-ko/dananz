@@ -1,18 +1,14 @@
 import React from "react";
 import Subheading from "@/components/general/subheading/Subheading";
-import Image from "next/image";
 import QuotationWithImage from "@/components/general/blocks/quotation-with-image/QuotationWithImage";
 
-import classes from "./AboutSummary.module.css";
+import { homePageData } from "@/static/websiteData";
 
 const AboutSummary: React.FC = () => {
   return (
-    <section className={`${classes.container} container`}>
+    <section className="container section">
       <Subheading text="About" />
-      <h3>
-        “We're one of the best furniture agency. Prioritizing customers and
-        making purchases easy are the hallmarks of our agency.”
-      </h3>
+      <h3> {homePageData.aboutTitle} </h3>
       <QuotationWithImage
         image={{ src: "/home/table.png", alt: "Table" }}
         quoteAuthor={{
@@ -21,7 +17,7 @@ const AboutSummary: React.FC = () => {
           imageSrc: "/general/quoteauthors/argda-dananz.png",
         }}
         linkTo="/about-us/"
-        quoteText="Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere."
+        quoteText={homePageData.aboutQuoteText}
       />
     </section>
   );

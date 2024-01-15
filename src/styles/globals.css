@@ -30,9 +30,10 @@ main {
   padding: 0;
 }
 
-section {
-  padding: 3rem 0;
-  margin: 3rem 0;
+section,
+.section {
+  margin-top: 0;
+  margin-bottom: 5rem;
 }
 
 button {
@@ -148,7 +149,8 @@ option {
 
 .container {
   width: 90%;
-  margin: 0 auto 3.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .margin-m {
@@ -211,6 +213,10 @@ option {
 }
 
 @media (min-width: 1400px) {
+  section,
+  .section {
+    margin-bottom: 6rem;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -232,13 +238,9 @@ option {
     font-size: 1.25rem;
   }
 
-  section {
-    padding: 2.5rem 0;
-    margin: 2.5rem 0;
-  }
-
-  .container {
-    margin: 0 auto 3rem;
+  section,
+  .section {
+    margin-bottom: 4.5rem;
   }
 
   .margin-s {
@@ -277,13 +279,9 @@ option {
     font-size: 1.15rem;
   }
 
-  section {
-    padding: 2rem 0;
-    margin: 2rem 0;
-  }
-
-  .container {
-    margin: 0 auto 2.5rem;
+  section,
+  .section {
+    margin-bottom: 3.5rem;
   }
 
   .margin-s {
@@ -320,13 +318,9 @@ option {
     margin: 0.75rem 0 1.25rem;
   }
 
-  section {
-    padding: 1.75rem 0;
-    margin: 1.75rem 0;
-  }
-
-  .container {
-    margin: 0 auto 2rem;
+  section,
+  .section {
+    margin-bottom: 2.5rem;
   }
 
   .margin-s {
@@ -348,5 +342,9 @@ option {
 @media (max-width: 576px) {
   .p-narrow {
     width: 80%;
+  }
+
+  .text-size-xl {
+    font-size: 1.75rem;
   }
 }

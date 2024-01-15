@@ -14,7 +14,7 @@ const ServiceList: React.FC = () => {
   ];
 
   return (
-    <section className={`${classes.container} container`}>
+    <section className={`${classes.container} container section`}>
       <Subheading text="Service" />
       <h3>attractive furniture with the best quality.</h3>
       <p className={`${classes.paragraph} text-gray text-size-s margin-m`}>
@@ -33,6 +33,7 @@ const ServiceList: React.FC = () => {
         src="/home/living-room.png"
         alt="Dananz"
         priority={false}
+        sizes="100vw"
       />
     </section>
   );

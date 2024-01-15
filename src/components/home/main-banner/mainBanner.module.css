@@ -34,7 +34,7 @@
 
 .numbersBlockContainer {
   position: absolute;
-  right: 20%;
+  right: 15%;
   top: 20%;
   width: 16rem;
 }
@@ -67,12 +67,51 @@
 
 @media (max-width: 1200px) {
   .heading {
-    font-size: 4rem;
+    font-size: 3.75rem;
+  }
+
+  .numbersBlockContainer {
+    width: 13rem;
+  }
+
+  .heading {
+    width: 55%;
+  }
+
+  .headerContainer::after {
+    top: 3.25rem;
   }
 }
+
 @media (max-width: 992px) {
   .heading {
     font-size: 3.5rem;
+  }
+
+  .copyText {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .numbersBlockContainer {
+    top: unset;
+    bottom: 7vw;
+    right: 0;
+  }
+
+  .heading {
+    width: 75%;
+  }
+
+  .headerContainer::after {
+    top: 3rem;
+    right: 0;
+    width: 45%;
+  }
+
+  .image {
+    height: 24rem;
+    object-fit: cover;
   }
 }
 
@@ -84,9 +123,58 @@
   .copy::before {
     top: -7rem;
   }
+
+  .headerContainer {
+    padding-bottom: 2rem;
+    flex-direction: column;
+  }
+
+  .headerContainer::after {
+    top: 2.5rem;
+    width: 30%;
+  }
+
+  .numbersBlockContainer {
+    top: unset;
+    bottom: 3rem;
+    right: unset;
+    left: 0;
+  }
+
+  .image {
+    height: 20rem;
+    object-fit: cover;
+  }
+
+  .copy {
+    padding-bottom: 0;
+  }
 }
+
 @media (max-width: 576px) {
   .heading {
     font-size: 2.5rem;
+    width: 80%;
+  }
+
+  .headerContainer::after {
+    top: 1.75rem;
+    width: 20%;
+  }
+
+  .copy {
+    width: 100%;
+    margin: 1.5rem 0;
+    justify-content: flex-start;
+  }
+  .numbersBlockContainer {
+    position: static;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  .image {
+    height: 15rem;
   }
 }

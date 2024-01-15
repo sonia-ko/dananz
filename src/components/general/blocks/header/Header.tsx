@@ -1,17 +1,12 @@
 import React from "react";
-import classes from "./Header.module.css";
 import Logo from "../../logo/Logo";
 import MenuMobile from "../../menu-mobile/MenuMobile";
 import MenuItems from "./MenuItems";
+import classes from "./Header.module.css";
 
-interface HeaderProps {
-  //   onMenuOpen: () => void;
-  //   displayHeader: boolean;
-}
-
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC = () => {
   return (
-    <header className={`${classes.container} container`}>
+    <header className={`${classes.container} container section`}>
       <Logo />
 
       <div className={classes.navContainer}>

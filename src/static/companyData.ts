@@ -126,3 +126,9 @@ export const dananzServices = [
       "the use of simple and limited elements to get the best effect or impression.",
   },
 ];
+
+export const dananzStatistics = [
+  { number: "350+", title: "Project Completed" },
+  { number: "23+", title: "Professional Teams" },
+  { number: "15+", title: "Years Experience" },
+];

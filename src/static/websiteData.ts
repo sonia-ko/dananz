@@ -10,6 +10,10 @@ export const homePageData = {
   h1: "Design your interor with high quality.",
   creationYear: "2022",
   copyText: "ALL RIGHT RESERVED",
+  aboutTitle: `“We're one of the best furniture agency. Prioritizing customers and
+  making purchases easy are the hallmarks of our agency.”`,
+  aboutQuoteText:
+    "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere.",
 };
 
 export const quotations = [
@@ -72,4 +76,10 @@ export const quotations = [
     },
     btnText: "See More",
   },
+];
+
+export const DananzServicesItems = [
+  { title: "Interior Design", id: "a1", linkTo: "/portfolio/" },
+  { title: "Consultant", id: "a2", linkTo: "/contact-us/" },
+  { title: "Construction Consultant", id: "a3", linkTo: "/contact-us/" },
 ];
