@@ -7,7 +7,7 @@ const NumbersBlock: React.FC = () => {
     <div className={classes.container}>
       {dananzStatistics.map((item) => {
         return (
-          <div className={classes.block}>
+          <div key={item.title} className={classes.block}>
             <span className="text-size-xl">{item.number}</span>
             <span>{item.title}</span>
           </div>

@@ -14,9 +14,14 @@
 .title {
   margin: 1.5rem 0;
 }
-.title:hover {
+
+.item:hover {
   cursor: pointer;
+}
+
+.item:hover .title {
   color: var(--grayscale-color);
+  text-decoration: underline;
 }
 
 .item {
@@ -29,7 +34,7 @@
   content: counter(list-counter, decimal-leading-zero);
   font-weight: 600;
   width: 10%;
-  margin: 1.5rem 0;
+  margin-top: 1.6rem;
 }
 
 .description {
@@ -44,4 +49,88 @@
 
 .text-xl {
   font-size: 2rem;
+}
+
+@media (min-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+  .container {
+    margin: 2.5rem 0;
+  }
+
+  .title {
+    margin: 1.25rem 0;
+  }
+
+  .item::before {
+    margin-top: 1.3rem;
+  }
+
+  .text-xl {
+    font-size: 1.75rem;
+  }
+
+  .description {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    margin: 2.25rem 0;
+  }
+
+  .title {
+    margin: 1rem 0;
+  }
+
+  .text-small {
+    font-size: 1.25rem;
+  }
+
+  .item::before {
+    margin-top: 1.1rem;
+  }
+  .text-xl {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.15rem;
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem 0;
+  }
+
+  .title {
+    margin: 0.75rem 0;
+  }
+
+  .item::before {
+    width: 15%;
+    margin-top: 0.75rem;
+  }
+
+  .item {
+    margin: 0.5rem 0;
+  }
+
+  .text-small {
+    font-size: 1.15rem;
+  }
+
+  .text-xl {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .item::before {
+    width: 15%;
+  }
 }

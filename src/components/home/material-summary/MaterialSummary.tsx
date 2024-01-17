@@ -15,11 +15,11 @@ const MaterialSummary: React.FC = () => {
     <section className={`${classes.container} container`}>
       <Subheading text="MATERIAL" />
       <div className={classes.contentContainer}>
-        <div className={classes.columnLeftContainer}>
+        <div>
           <h3 className={classes.heading}>
             choice of materials for quality furniture.
           </h3>
-          <p className="margin-s text-gray text-size-s">
+          <p className="text-gray text-size-s margin-y-s">
             You can custom the material as desired. And our furniture uses the
             best materials and selected quality materials.
           </p>

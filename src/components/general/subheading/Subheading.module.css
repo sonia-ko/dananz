@@ -27,9 +27,9 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .container {
-    width: 70%;
+    width: 80%;
     margin: 0 0 1.5rem 0;
   }
 }

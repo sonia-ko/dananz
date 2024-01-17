@@ -10,14 +10,14 @@ const CallToAction: React.FC = () => {
 
   return (
     <section className={classes.container}>
-      <div className={`${classes.containerInner} container`}>
+      <div className={`${classes.containerInner} padding-y-l container`}>
         <p
           className={`${classes.columnLeft} text-white text-size-l text-semibold`}
         >
           let's discuss making your interior like a dream place!
         </p>
         <div className={classes.columnRight}>
-          <p className="text-gray text-size-s margin-s">
+          <p className="text-gray text-size-s margin-b-m">
             Contact us below to work together to build your amazing interior
           </p>
           <Button

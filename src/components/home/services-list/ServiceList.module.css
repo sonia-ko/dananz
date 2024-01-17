@@ -3,6 +3,7 @@
   z-index: 0;
   padding-bottom: 15rem;
 }
+
 .paragraph {
   width: 30%;
 }
@@ -43,9 +44,31 @@
   .listContainer {
     padding: 1.5rem 0;
   }
+
+  .image {
+    max-width: 90%;
+    height: auto;
+  }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .image {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .paragraph {
+    width: 100%;
+  }
+
+  .listContainer {
+    width: 100%;
+  }
+
+  .container {
+    padding-bottom: 0;
+  }
 }
 @media (min-width: 576px) {
 }

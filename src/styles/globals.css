@@ -165,6 +165,11 @@ option {
   margin-top: 2rem;
 }
 
+.margin-y-s {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .margin-b-s {
   margin-bottom: 1.5rem;
 }
@@ -175,6 +180,11 @@ option {
 
 .margin-b-l {
   margin-bottom: 4rem;
+}
+
+.padding-y-l {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .text-white {
@@ -299,6 +309,10 @@ option {
   .margin-b-s {
     margin-bottom: 1rem;
   }
+
+  .margin-m {
+    margin: 1.75rem 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -320,7 +334,7 @@ option {
 
   section,
   .section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 4rem;
   }
 
   .margin-s {
@@ -339,6 +353,7 @@ option {
     margin-bottom: 0.75rem;
   }
 }
+
 @media (max-width: 576px) {
   .p-narrow {
     width: 80%;

@@ -7,7 +7,7 @@
   width: 20%;
   color: var(--light-gray-color);
   font-size: 1.125rem;
-  padding-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .heading {
@@ -18,11 +18,38 @@
 }
 
 @media (max-width: 1200px) {
-}
-@media (max-width: 992px) {
+  .p {
+    width: 30%;
+  }
+
+  .heading {
+    width: 35%;
+  }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 992px) {
+  .p {
+    width: 50%;
+  }
+
+  .heading {
+    width: 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .heading {
+    width: 70%;
+  }
+
+  .p {
+    width: 100%;
+    font-size: 1.125rem;
+  }
 }
 @media (min-width: 576px) {
 }
