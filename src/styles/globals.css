@@ -268,6 +268,10 @@ option {
   .margin-b-s {
     margin-bottom: 1.25rem;
   }
+
+  .text-size-l {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 992px) {
@@ -313,6 +317,9 @@ option {
   .margin-m {
     margin: 1.75rem 0;
   }
+  .text-size-l {
+    font-size: 1.75rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -351,6 +358,10 @@ option {
 
   .margin-b-s {
     margin-bottom: 0.75rem;
+  }
+
+  .text-size-l {
+    font-size: 1.5rem;
   }
 }
 

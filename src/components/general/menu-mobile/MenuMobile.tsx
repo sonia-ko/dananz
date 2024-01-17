@@ -12,21 +12,28 @@ import { useState } from "react";
 interface MenuMobile {
   //   onMenuOpen: () => void;
   //   displayHeader: boolean;
+  openMenu: () => void;
+  closeMenu: () => void;
+  menuOpened: boolean;
 }
 
-const MenuMobile: React.FC<MenuMobile> = () => {
+const MenuMobile: React.FC<MenuMobile> = ({
+  openMenu,
+  closeMenu,
+  menuOpened,
+}) => {
   const router = useRouter();
-  const [menuOpened, setMenuOpened] = useState(false);
+  // const [menuOpened, setMenuOpened] = useState(false);
 
-  const openMenu = () => {
-    document.body.style.overflow = "hidden";
-    setMenuOpened(true);
-  };
+  // const openMenu = () => {
+  //   document.body.style.overflow = "hidden";
+  //   setMenuOpened(true);
+  // };
 
-  const closeMenu = () => {
-    document.body.style.overflow = "auto";
-    setMenuOpened(false);
-  };
+  // const closeMenu = () => {
+  //   document.body.style.overflow = "auto";
+  //   setMenuOpened(false);
+  // };
 
   return (
     <div className={classes.container}>
