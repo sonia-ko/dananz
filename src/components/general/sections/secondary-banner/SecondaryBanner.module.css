@@ -24,6 +24,10 @@
 }
 
 @media (min-width: 1400px) {
+  .image {
+    height: 80vh;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 1200px) {

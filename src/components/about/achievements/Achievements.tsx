@@ -19,11 +19,13 @@ const Achievements: React.FC = () => {
           height="525"
           src="/about/kitchen-by-the-sea.png"
           alt="Kitchen design"
-          layout="responsive"
-          priority={false}
+          priority={true}
+          sizes="100vw"
         />
 
-        <NumbersBlock />
+        <div className={classes.numbersBlockContainer}>
+          <NumbersBlock />
+        </div>
       </div>
     </section>
   );
