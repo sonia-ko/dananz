@@ -10,7 +10,7 @@ const OurTeam: React.FC = () => {
       <Subheading text="Designer" />
       <h3 className="margin-b-m">Creative Person</h3>
       <p
-        className={`${classes.p} text-gray text-size-s line-height-m margin-b-l `}
+        className={`${classes.p} p-narrow text-gray text-size-s line-height-m margin-b-l `}
       >
         Customize your interior design into a dream place with the best
         designers and quality furniture. We try our best to fulfill your
@@ -20,6 +20,7 @@ const OurTeam: React.FC = () => {
         {staff.map((el) => {
           return (
             <TeamMemberBlock
+              key={el.id}
               imgSrc={el.img}
               title={el.title}
               employeeName={el.employeeName}

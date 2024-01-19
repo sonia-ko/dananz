@@ -22,8 +22,8 @@ const TeamMemberBlock: React.FC<TeamMemberBlockProps> = ({
         height="386"
         src={imgSrc}
         alt={employeeName}
-        layout="responsive"
-        priority={false}
+        priority={true}
+        sizes="100vw"
       />
       <div className={classes.textContainer}>
         <p className="text-size-m text-semibold">{employeeName}</p>

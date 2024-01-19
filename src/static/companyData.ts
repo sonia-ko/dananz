@@ -3,41 +3,49 @@ export const staff = [
     img: "/teams/our-team/john-doe.png",
     title: "CEO",
     employeeName: "John Doe",
+    id: "emp1",
   },
   {
     img: "/teams/our-team/bob-marley.png",
     title: "Designer",
     employeeName: "Bob Marley",
+    id: "emp2",
   },
   {
     img: "/teams/our-team/emilia-sparks.png",
     title: "STO",
-    employeeName: "Emilia Sparks",
+    employeeName: "Sansa Stark",
+    id: "emp3",
   },
   {
     img: "/teams/our-team/robb-stark.png",
     title: "Manager",
     employeeName: "Robb Stark",
+    id: "emp4",
   },
   {
     img: "/teams/our-team/ron-weasley.png",
     title: "Designer",
     employeeName: "Ron Weasley",
+    id: "emp5",
   },
   {
     img: "/teams/our-team/harry-potter.png",
     title: "Web Master",
     employeeName: "Harry Potter",
+    id: "emp6",
   },
   {
     img: "/teams/our-team/emma-watson.png",
     title: "CEO",
     employeeName: "Emma Watson",
+    id: "emp7",
   },
   {
     img: "/teams/our-team/jeniffer-li.png",
     title: "Manager",
     employeeName: "Jeniffer Li",
+    id: "emp8",
   },
 ];
 

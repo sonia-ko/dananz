@@ -5,6 +5,12 @@
   align-items: flex-end;
 }
 
+.image {
+  max-width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
 .textContainer {
   position: absolute;
   background-color: var(--white-color);
