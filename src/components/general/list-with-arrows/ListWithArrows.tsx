@@ -39,7 +39,7 @@ const ListWithArrows: React.FC<ListWithArrowsProps> = ({
                   <p className={classes.description}>{el.description}</p>
                 )}
               </div>
-              <ArrowRight onClick={() => router.push("/portfolio/")} />
+              <ArrowRight onClick={() => el.linkTo && router.push(el.linkTo)} />
             </div>
           </li>
         );

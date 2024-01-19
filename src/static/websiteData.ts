@@ -1,7 +1,7 @@
 export const menuItems = [
-  { title: "About Us", url: "/about-us/" },
-  { title: "Services", url: "/services/" },
-  { title: "Our Teams", url: "/our-teams/" },
+  { title: "About Us", url: "/about-us" },
+  { title: "Services", url: "/services" },
+  { title: "Our Teams", url: "/our-teams" },
 ];
 
 export const acceptedPhoneFormats = ["UA", "US", "DE", "IT"];
@@ -23,13 +23,14 @@ export const quotations = [
     image: { src: "/portfolio/minimalist-room.png", alt: "Minimalist Room" },
     quoteText:
       "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere.",
-    linkTo: "",
+    linkTo: "/portfolio/minimalist-room",
     quoteAuthor: {
       authorName: "Arga Danaan",
       title: "CEO of Dananz",
       imageSrc: "/general/quoteauthors/argda-dananz.png",
     },
     btnText: "See More",
+    anchor: "minimalist",
   },
   {
     id: "vintage-room",
@@ -37,13 +38,14 @@ export const quotations = [
     image: { src: "/portfolio/vintage-room.png", alt: "vintage room" },
     quoteText:
       "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere.",
-    linkTo: "",
+    linkTo: "/portfolio/vintage-room",
     quoteAuthor: {
       authorName: "Arga Danaan",
       title: "Web Developer",
       imageSrc: "/general/quoteauthors/argda-dananz.png",
     },
     btnText: "See More",
+    anchor: "vintage",
   },
   {
     id: "modern-room",
@@ -51,13 +53,14 @@ export const quotations = [
     image: { src: "/portfolio/modern-room.png", alt: "modern Room" },
     quoteText:
       "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere.",
-    linkTo: "",
+    linkTo: "/portfolio/modern-room",
     quoteAuthor: {
       authorName: "Arga Danaan",
       title: "Web Designer",
       imageSrc: "/general/quoteauthors/argda-dananz.png",
     },
     btnText: "See More",
+    anchor: "modern",
   },
   {
     id: "transitional-room",
@@ -68,13 +71,14 @@ export const quotations = [
     },
     quoteText:
       "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere.",
-    linkTo: "",
+    linkTo: "/portfolio/transitional-room",
     quoteAuthor: {
       authorName: "Arga Danaan",
       title: "STO of Dananz",
       imageSrc: "/general/quoteauthors/argda-dananz.png",
     },
     btnText: "See More",
+    anchor: "transitional",
   },
 ];
 

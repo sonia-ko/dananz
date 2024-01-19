@@ -16,6 +16,7 @@ interface QuotationWithImageProps {
   };
   btnText?: string;
   imgOnTheLeft?: boolean;
+  id?: string;
 }
 
 const QuotationWithImage: React.FC<QuotationWithImageProps> = ({
@@ -26,11 +27,13 @@ const QuotationWithImage: React.FC<QuotationWithImageProps> = ({
   btnText = "Learn More",
   imgOnTheLeft = true,
   title,
+  id,
 }) => {
   const router = useRouter();
 
   return (
     <div
+      id={id}
       className={`${classes.container} ${
         !imgOnTheLeft && classes.imgRightContainer
       }`}

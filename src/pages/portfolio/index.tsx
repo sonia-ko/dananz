@@ -41,6 +41,7 @@ export default function OurTeams() {
                 linkTo={item.linkTo}
                 title={item.title}
                 imgOnTheLeft={i % 2 === 0}
+                id={item.anchor}
               />
             );
           })}

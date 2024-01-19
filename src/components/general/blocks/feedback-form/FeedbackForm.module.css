@@ -84,3 +84,9 @@
     grid-column-end: 2;
   }
 }
+
+@media (max-width: 370px) {
+  .container {
+    /* width: 80%; */
+  }
+}

@@ -1,6 +1,35 @@
 .blue {
-  background-color: var(--blue-color);
+  border: none;
+  cursor: pointer;
+  display: block;
+  background: var(--blue-color);
   color: var(--white-color);
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+.blue:hover {
+  cursor: pointer;
+}
+
+.blue:not(:disabled)::before {
+  content: "";
+  position: absolute;
+  z-index: -5;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(97, 122, 204);
+  opacity: 0;
+  transition-duration: 600ms;
+  transition-property: opacity, right;
+}
+
+.blue:not(:disabled):hover::before {
+  right: 0;
+  opacity: 1;
 }
 
 .blue:disabled {
@@ -15,6 +44,28 @@
 .white {
   background-color: var(--white-color);
   color: var(--grayscale-color);
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+.white::before {
+  content: "";
+  position: absolute;
+  z-index: -5;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(216, 216, 216);
+  opacity: 0;
+  transition-duration: 600ms;
+  transition-property: opacity, right;
+}
+
+.white:hover::before {
+  right: 0;
+  opacity: 1;
 }
 
 @media (min-width: 1400px) {

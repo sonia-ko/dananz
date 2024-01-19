@@ -1,5 +1,8 @@
 .container {
   width: 100%;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 0;
 }
 
 .label,
@@ -30,4 +33,11 @@
   border: none;
   margin: 0;
   padding: 1rem;
+}
+
+@media (max-width: 390px) {
+  .input,
+  .phoneInput {
+    width: 100%;
+  }
 }

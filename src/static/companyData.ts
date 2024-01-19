@@ -108,28 +108,28 @@ export const dananzServices = [
   {
     title: "Vintage",
     id: "s1",
-    linkTo: "/portfolio/",
+    linkTo: "/portfolio/#vintage",
     description:
       "the use of simple and limited elements to get the best effect or impression.",
   },
   {
     title: "Minimalist",
     id: "s2",
-    linkTo: "/portfolio/",
+    linkTo: "/portfolio/#minimalist",
     description:
       "the use of simple and limited elements to get the best effect or impression.",
   },
   {
     title: "Modern",
     id: "s3",
-    linkTo: "/portfolio/",
+    linkTo: "/portfolio/#modern",
     description:
       "the use of simple and limited elements to get the best effect or impression.",
   },
   {
     title: "Transitional",
     id: "s4",
-    linkTo: "/portfolio/",
+    linkTo: "/portfolio/#transitional",
     description:
       "the use of simple and limited elements to get the best effect or impression.",
   },
