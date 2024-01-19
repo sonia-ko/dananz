@@ -6,6 +6,9 @@
 }
 
 .image {
+  width: 100%;
+  object-fit: cover;
+  height: auto;
 }
 
 .textContainer {
@@ -18,16 +21,25 @@
 }
 
 @media (max-width: 1200px) {
+  .container {
+    grid-template-columns: 60% 32%;
+    column-gap: 8%;
+    margin-bottom: 2.5rem;
+  }
 }
 @media (max-width: 992px) {
+  .container {
+    grid-template-columns: 60% 35%;
+    column-gap: 5%;
+    margin-bottom: 2.5rem;
+    align-items: stretch;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
     display: grid;
     grid-template-columns: 100%;
-    row-gap: 1.5rem;
+    row-gap: 3.5rem;
   }
-}
-@media (max-width: 576px) {
 }

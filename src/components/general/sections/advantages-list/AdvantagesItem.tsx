@@ -11,8 +11,8 @@ const AdvantagesItem: React.FC<AdvantagesItemProps> = ({
   description,
 }) => {
   return (
-    <li className={`${classes.container}`}>
-      <h5 className={classes.heading}>{title}</h5>
+    <li className={classes.container}>
+      <h5 className="text-centered">{title}</h5>
       <p className="text-gray text-size-s text-centered line-height-m">
         {description}
       </p>

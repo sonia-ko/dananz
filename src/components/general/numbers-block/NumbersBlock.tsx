@@ -9,7 +9,7 @@ const NumbersBlock: React.FC = () => {
         return (
           <div key={item.title} className={classes.block}>
             <span className="text-size-xl">{item.number}</span>
-            <span>{item.title}</span>
+            <span className="text-centered">{item.title}</span>
           </div>
         );
       })}

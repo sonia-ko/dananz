@@ -57,7 +57,7 @@
 
 @media (min-width: 1500px) {
   .heading {
-    width: 45rem;
+    width: 40%;
   }
 
   .headerContainer::after {
@@ -95,7 +95,7 @@
 
   .numbersBlockContainer {
     top: unset;
-    bottom: 7vw;
+    bottom: 2vw;
     right: 0;
   }
 
@@ -131,7 +131,7 @@
 
   .headerContainer::after {
     top: 2.5rem;
-    width: 30%;
+    width: 25%;
   }
 
   .numbersBlockContainer {

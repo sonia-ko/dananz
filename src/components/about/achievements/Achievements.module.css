@@ -3,11 +3,10 @@
 
 .contentContainer {
   display: grid;
-  grid-template-columns: 70% 20%;
-  column-gap: 10%;
+  grid-template-columns: 73% 22%;
+  column-gap: 5%;
   margin-top: 3rem;
-
-  /* overflow: hidden; */
+  align-items: stretch;
 }
 
 .heading {
@@ -16,27 +15,34 @@
 
 .image {
   width: 100%;
-  height: 100%;
   object-fit: cover;
-  height: 55vh;
-  max-height: 55vh;
-}
-
-.numbersBlockContainer {
-  height: 100%;
-  height: 55vh;
-  max-height: 55vh;
 }
 
 @media (min-width: 1400px) {
 }
 
 @media (max-width: 1200px) {
+  .contentContainer {
+    grid-template-columns: 72% 25%;
+    column-gap: 3%;
+  }
+
+  .image {
+    max-height: 45vh;
+  }
+
+  .heading {
+    width: 70%;
+  }
 }
+
 @media (max-width: 992px) {
   .contentContainer {
-    grid-template-columns: 60% 35%;
+    grid-template-columns: 67% 28%;
     column-gap: 5%;
+  }
+  .heading {
+    width: 80%;
   }
 }
 
@@ -46,4 +52,7 @@
   }
 }
 @media (max-width: 576px) {
+  .contentContainer {
+    display: block;
+  }
 }

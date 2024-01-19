@@ -23,9 +23,7 @@ const Achievements: React.FC = () => {
           sizes="100vw"
         />
 
-        <div className={classes.numbersBlockContainer}>
-          <NumbersBlock />
-        </div>
+        <NumbersBlock />
       </div>
     </section>
   );

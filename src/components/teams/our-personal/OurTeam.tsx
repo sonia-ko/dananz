@@ -1,7 +1,4 @@
 import React from "react";
-
-import Link from "next/link";
-import Image from "next/image";
 import Subheading from "@/components/general/subheading/Subheading";
 import classes from "./OurTeam.module.css";
 import TeamMemberBlock from "./TeamMemberBlock";

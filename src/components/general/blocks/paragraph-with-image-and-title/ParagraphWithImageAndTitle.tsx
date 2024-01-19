@@ -1,7 +1,6 @@
 import React from "react";
-import classes from "./ParagraphWithImageAndTitle.module.css";
 import Image from "next/image";
-import Button from "../../button/button";
+import classes from "./ParagraphWithImageAndTitle.module.css";
 
 interface ParagraphWithImageAndTitleProps {
   image: { src: string; alt: string };
@@ -22,8 +21,8 @@ const ParagraphWithImageAndTitle: React.FC<ParagraphWithImageAndTitleProps> = ({
         height="365"
         src={image.src}
         alt={image.alt}
+        sizes="100vw"
         priority={false}
-        layout="responsive"
       />
 
       <div className={classes.textContainer}>

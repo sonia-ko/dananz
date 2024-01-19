@@ -83,3 +83,21 @@ export const DananzServicesItems = [
   { title: "Consultant", id: "a2", linkTo: "/contact-us/" },
   { title: "Construction Consultant", id: "a3", linkTo: "/contact-us/" },
 ];
+
+export const dananzAdvantages = [
+  {
+    title: "High Quality",
+    description:
+      "Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.",
+  },
+  {
+    title: "Professional Designer",
+    description:
+      "Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.",
+  },
+  {
+    title: "The Best Services",
+    description:
+      "Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.",
+  },
+];
