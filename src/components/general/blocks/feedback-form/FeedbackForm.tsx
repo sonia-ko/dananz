@@ -8,19 +8,11 @@ import { validateName } from "@/helpers/validateName";
 import { validatePhone } from "@/helpers/validatePhone";
 import { validateTextArea } from "@/helpers/validateTextArea";
 import { acceptedPhoneFormats } from "@/static/websiteData";
+import { feedback } from "@/types/types";
 
 import classes from "./FeedbackForm.module.css";
 
 const NodeName = "feedbacks";
-
-type feedback = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNum: string;
-  message: string;
-  selectedCountry: string;
-};
 
 type inputTypes =
   | "firstName"
