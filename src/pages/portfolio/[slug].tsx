@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Layout from "@/components/layout/Layout";
 import SecondaryBanner from "@/components/general/sections/secondary-banner/SecondaryBanner";
@@ -8,6 +8,7 @@ import ImagesGallery from "@/components/general/sections/images-gallery/ImagesGa
 import DescriptionContainer from "@/components/portfolio/descriptionContainer/DescriptionContainer";
 import CallToAction from "@/components/general/sections/call-to-action/CallToAction";
 import { databaseURL } from "@/config/databaseConfig";
+import useSWR from "swr";
 
 interface PostProps {
   slug: object;
@@ -16,50 +17,50 @@ interface PostProps {
 const NodeName = "portfolio";
 
 // this should be still added to DB
-const room = {
+const roomExample = {
   slug: "transitional-room",
   title: "Transitional Room",
   description:
-    "HRank tall boy man them over post now. Off into she bed long fat room. Recommend existence curiosity perfectly favourite.",
+    "Perceived end knowledge certainly day sweetness why cordially. Ask quick six seven offer see among. Handsome met debating sir dwelling age material. ",
   mainImg: "/portfolio/transitional-room.png",
   projectOverview: [
     {
       id: "ov-par1",
-      text: "Inhabiting discretion the her dispatched decisively boisterous joy. So form were wish open is able of mile of. Waiting express if prevent it we an musical. Especially reasonable travelling she son. Resources resembled forfeited no to zealously. Learning why get hastened smallest cheerful.",
+      text: "Admiration we surrounded possession frequently he. Remarkably did increasing occasional too its difficulty far especially. Known tiled but sorry joy balls. Bed sudden manner indeed fat now feebly.  Face do with in need of wife paid that be.  No me applauded or favourite dashwoods.",
     },
   ],
   designProcess: [
     {
       id: "des-par1",
-      text: "Article nor prepare chicken you him now. Shy merits say advice ten before lovers innate add. She cordially behaviour can attempted estimable. Trees delay fancy noise manor do as an small.",
+      text: "So by colonel hearted ferrars. Draw from upon here gone add one. He in sportsman household otherwise it perceived instantly. Is inquiry no he several excited am. Called though excuse it he having.",
     },
     {
       id: "des-par2",
-      text: "Ought these are balls place mrs their times add she. Taken no great widow spoke of it small. Genius use except son esteem merely her limits. Sons park by do make on. It do oh cottage offered cottage in written. ",
+      text: "Meant balls it if up doubt small purse. Required his you put the outlived answered position. An pleasure exertion if believed provided to. All led out world these music while asked. Paid mind even sons does he door no. ",
     },
   ],
   date: "July 22 - 2022",
   category: "Interior Design - Furnitur",
   images: [
     {
-      src: "/home/table.png",
-      alt: "Minimalist chair",
+      src: "/about/kitchen-by-the-sea.png",
+      alt: "Transitional kitchen",
     },
     {
-      src: "/about/people-talking.png",
-      alt: "Minimalist mirror",
+      src: "/services/living-room-furniture.png",
+      alt: "Transitional - team",
     },
     {
-      src: "/home/kitchen.png",
-      alt: "Minimalist room",
+      src: "/teams/hands.png",
+      alt: "Transitional room",
     },
     {
-      src: "/portfolio/modern-room.png",
-      alt: "Minimalist living room",
+      src: "/portfolio/transitional-room.png",
+      alt: "Transitional living room",
     },
     {
-      src: "/home/wood.png",
-      alt: "Minimalist walls",
+      src: "/services/consultant.png",
+      alt: "Transitional walls",
     },
   ],
 };
@@ -114,6 +115,33 @@ const room = {
 
 const PostPage: React.FC<PostProps> = ({ slug }) => {
   const router = useRouter();
+
+  const [room, setRoom] = useState(roomExample);
+
+  const selectedStyle = router.query.slug;
+
+  const onPageLoad = async (query: string) => {};
+
+  const { data, error } = useSWR(`${databaseURL}/portfolio.json`, (url) =>
+    fetch(url).then((res) => res.json())
+  );
+
+  console.log(selectedStyle);
+
+  useEffect(() => {
+    if (data) {
+      console.log(data);
+      let roomToShow;
+
+      for (const property in data) {
+        console.log(data[property].slug);
+        if (data[property].slug === selectedStyle) {
+          console.log("this is " + selectedStyle);
+          setRoom(data[property].room);
+        }
+      }
+    }
+  }, [data]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
