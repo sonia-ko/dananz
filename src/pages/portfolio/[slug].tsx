@@ -1,25 +1,31 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import useSWR from "swr";
+import { GetStaticPaths, GetStaticProps } from "next";
+
+import { databaseURL } from "@/config/databaseConfig";
+
 import Head from "next/head";
+
 import Layout from "@/components/layout/Layout";
 import SecondaryBanner from "@/components/general/sections/secondary-banner/SecondaryBanner";
-import { GetStaticPaths, GetStaticProps } from "next";
 import ImagesGallery from "@/components/general/sections/images-gallery/ImagesGallery";
 import DescriptionContainer from "@/components/portfolio/descriptionContainer/DescriptionContainer";
 import CallToAction from "@/components/general/sections/call-to-action/CallToAction";
-import { databaseURL } from "@/config/databaseConfig";
-import useSWR from "swr";
+import { Room } from "@/types/types";
 
-interface PostProps {
+interface RoomProps {
   slug: object;
+  props: object;
 }
 
 const NodeName = "portfolio";
+// const NodeName = "prf";
 
-// this should be still added to DB
+//will be used for tests
 const roomExample = {
   slug: "transitional-room",
-  title: "Transitional Room",
+  title: "Test Room",
   description:
     "Perceived end knowledge certainly day sweetness why cordially. Ask quick six seven offer see among. Handsome met debating sir dwelling age material. ",
   mainImg: "/portfolio/transitional-room.png",
@@ -65,108 +71,58 @@ const roomExample = {
   ],
 };
 
-// do not erase, will be used in tests
-// const exampleObj = {
-//   title: "Minimalist Room",
-//   description:
-//     "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-//   mainImg: "/portfolio-pages/minimalist/sofa.png",
-//   projectOverview: [
-//     {
-//       id: "ov-par1",
-//       text: "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere. Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere. Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere. ",
-//     },
-//   ],
-//   designProcess: [
-//     {
-//       id: "des-par1",
-//       text: "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere. Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere.",
-//     },
-//     {
-//       id: "des-par2",
-//       text: "Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere. Online learning with us does not interfere with your daily life. because learning can be done anytime and anywhere.",
-//     },
-//   ],
-//   date: "July 22 - 2022",
-//   category: "Interior Design - Furnitur",
-//   images: [
-//     {
-//       src: "/portfolio-pages/minimalist/chair.png",
-//       alt: "Minimalist chair",
-//     },
-//     {
-//       src: "/portfolio-pages/minimalist/mirror.png",
-//       alt: "Minimalist mirror",
-//     },
-//     {
-//       src: "/portfolio-pages/minimalist/room.png",
-//       alt: "Minimalist room",
-//     },
-//     {
-//       src: "/portfolio-pages/minimalist/living-room.png",
-//       alt: "Minimalist living room",
-//     },
-//     {
-//       src: "/portfolio-pages/minimalist/walls.png",
-//       alt: "Minimalist walls",
-//     },
-//   ],
-// };
-
-const PostPage: React.FC<PostProps> = ({ slug }) => {
+const RoomPage: React.FC<RoomProps> = ({ slug, props }) => {
   const router = useRouter();
 
-  const [room, setRoom] = useState(roomExample);
+  console.log(props);
+  const [room, setRoom] = useState<Room | undefined>(undefined);
 
   const selectedStyle = router.query.slug;
 
-  const onPageLoad = async (query: string) => {};
-
-  const { data, error } = useSWR(`${databaseURL}/portfolio.json`, (url) =>
+  const { data, error } = useSWR(`${databaseURL}/${NodeName}.json`, (url) =>
     fetch(url).then((res) => res.json())
   );
 
-  console.log(selectedStyle);
-
   useEffect(() => {
     if (data) {
-      console.log(data);
-      let roomToShow;
-
       for (const property in data) {
-        console.log(data[property].slug);
         if (data[property].slug === selectedStyle) {
-          console.log("this is " + selectedStyle);
           setRoom(data[property].room);
         }
       }
     }
   }, [data]);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  if (!room) {
+    return (
+      <>
+        <Head>
+          <title> Dananz </title>
+          <meta name="description" content="Loading..." />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Layout>
+          <section className="container">
+            <SecondaryBanner
+              image={{
+                src: "/portfolio/home-office.png",
+                alt: "Our Teams - Hands",
+              }}
+              title="Loading..."
+              paragraph="Please wait for the page to be loaded...."
+            />
+          </section>
+        </Layout>
+      </>
+    );
+  }
 
-    try {
-      await fetch(`${databaseURL}/${NodeName}.json?`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ room }),
-      });
-
-      console.log("data sent");
-    } catch (error) {
-      console.error("Error sending:", error);
-    }
-  };
-
-  console.log(slug);
   return (
     <>
       <Head>
-        <title>Dananz - Our Teams</title>
-        <meta name="description" content="Our Teams" />
+        <title> {room.title} - Dananz </title>
+        <meta name="description" content={room.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -199,4 +155,4 @@ const PostPage: React.FC<PostProps> = ({ slug }) => {
   );
 };
 
-export default PostPage;
+export default RoomPage;

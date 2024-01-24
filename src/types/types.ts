@@ -16,3 +16,15 @@ export type image = {
   src: string;
   alt: string;
 };
+
+export type Room = {
+  slug: string;
+  title: string;
+  description: string;
+  mainImg: string;
+  projectOverview: overwiewParagraph[];
+  designProcess: overwiewParagraph[];
+  date: string;
+  category: string;
+  images: image[];
+};

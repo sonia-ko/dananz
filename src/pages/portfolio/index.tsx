@@ -4,12 +4,10 @@ import Layout from "@/components/layout/Layout";
 import SecondaryBanner from "@/components/general/sections/secondary-banner/SecondaryBanner";
 import AdvantagesList from "@/components/general/sections/advantages-list/AdvantagesList";
 
-import OurTeam from "@/components/teams/our-personal/OurTeam";
 import Subheading from "@/components/general/subheading/Subheading";
 import CallToAction from "@/components/general/sections/call-to-action/CallToAction";
 import QuotationWithImage from "@/components/general/blocks/quotation-with-image/QuotationWithImage";
 import { quotations } from "@/static/websiteData";
-const inter = Inter({ subsets: ["latin"] });
 
 export default function OurTeams() {
   return (

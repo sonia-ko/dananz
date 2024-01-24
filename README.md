@@ -2,6 +2,12 @@
 
 The demo can be checked [here](https://dananz-design.vercel.app/).
 
+The website is connected with the Firestore Realtime Database and uses the data from the DB to generate portfolio pages (GET requests).
+
+Also, the data from the feedback form and subscribers' data is stored in the database using the Post method.
+
+There is also some input validation added to validate the form inputs.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 The project uses the following technologies:

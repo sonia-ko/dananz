@@ -23,3 +23,21 @@
 
 .imgLeft {
 }
+
+@media (max-width: 1200px) {
+  .img {
+    height: 25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .img {
+    height: 22rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .img {
+    height: 15rem;
+  }
+}
