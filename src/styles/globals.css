@@ -19,6 +19,7 @@ body {
   font-family: "Poppins", sans-serif;
   z-index: 0;
   max-width: 100vw;
+  background-color: var(--white-color);
   /* overflow-x: hidden; */
 }
 
@@ -374,5 +375,12 @@ option {
 
   .text-size-xl {
     font-size: 1.75rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--white-color);
+    color: var(--black-color);
   }
 }

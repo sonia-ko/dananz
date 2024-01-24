@@ -190,9 +190,10 @@ const PostPage: React.FC<PostProps> = ({ slug }) => {
         <ImagesGallery images={room.images} />
 
         <CallToAction />
-        <form onSubmit={handleSubmit}>
+        {/* test button */}
+        {/* <form onSubmit={handleSubmit}>
           <button>Add</button>
-        </form>
+        </form> */}
       </Layout>
     </>
   );
