@@ -24,6 +24,10 @@
 .imgLeft {
 }
 
+.mobileContainer {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .img {
     height: 25rem;
@@ -36,8 +40,12 @@
   }
 }
 
-@media (max-width: 992px) {
-  .img {
-    height: 15rem;
+@media (max-width: 768px) {
+  .container {
+    display: none;
+  }
+
+  .mobileContainer {
+    display: block;
   }
 }

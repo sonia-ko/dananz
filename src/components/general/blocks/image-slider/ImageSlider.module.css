@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sliderBtnRight,
+.sliderBtnLeft {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.719);
+  height: 50px;
+  padding-top: 36px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  width: 55px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 50%;
+}
+
+.sliderBtnRight {
+  right: 10px;
+}
+
+.sliderBtnLeft {
+  left: 10px;
+}
+
+@media (max-width: 576px) {
+  .img {
+    height: 15rem;
+  }
+}
