@@ -1,13 +1,14 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps, GetStaticPropsResult } from "next";
 
 import { databaseURL } from "@/config/databaseConfig";
 
 import Head from "next/head";
 
 import Layout from "@/components/layout/Layout";
+import ErrorNotFound from "@/components/general/sections/error-not-found/ErrorNotFound";
 import SecondaryBanner from "@/components/general/sections/secondary-banner/SecondaryBanner";
 import ImagesGallery from "@/components/general/sections/images-gallery/ImagesGallery";
 import DescriptionContainer from "@/components/portfolio/descriptionContainer/DescriptionContainer";
@@ -74,13 +75,16 @@ const roomExample = {
 const RoomPage: React.FC<RoomProps> = ({ slug, props }) => {
   const router = useRouter();
 
-  console.log(props);
   const [room, setRoom] = useState<Room | undefined>(undefined);
+  const [roomNotFound, setRoomNotFound] = useState<boolean>(false);
 
   const selectedStyle = router.query.slug;
 
   const { data, error } = useSWR(`${databaseURL}/${NodeName}.json`, (url) =>
-    fetch(url).then((res) => res.json())
+    fetch(url).then((res) => {
+      console.log(res);
+      return res.json();
+    })
   );
 
   useEffect(() => {
@@ -88,10 +92,36 @@ const RoomPage: React.FC<RoomProps> = ({ slug, props }) => {
       for (const property in data) {
         if (data[property].slug === selectedStyle) {
           setRoom(data[property].room);
+          setRoomNotFound(false);
+          break;
         }
       }
+    } else {
+      setRoomNotFound(true);
+      console.log("room not found");
     }
-  }, [data]);
+  }, [data, error]);
+
+  if (roomNotFound) {
+    return (
+      <>
+        <Head>
+          <title> Dananz - Room not found .... </title>
+          <meta name="description" content="Loading..." />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Layout>
+          <ErrorNotFound
+            title="404 - Page Not Found"
+            description="Unfortunately, the page you were looking for cannot be found..."
+            btnText="Back to Portfolio"
+            linkTo="/portfolio/"
+          />
+        </Layout>
+      </>
+    );
+  }
 
   if (!room) {
     return (
@@ -146,13 +176,72 @@ const RoomPage: React.FC<RoomProps> = ({ slug, props }) => {
         <ImagesGallery images={room.images} />
 
         <CallToAction />
-        {/* test button */}
-        {/* <form onSubmit={handleSubmit}>
-          <button>Add</button>
-        </form> */}
       </Layout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  try {
+    const slug = params?.slug;
+    const res = await fetch(`${databaseURL}/${NodeName}.json`);
+    const data = await res.json();
+
+    if (!data) {
+      console.error("Data not available");
+      return { props: {} };
+    }
+
+    let room = null;
+
+    for (const property in data) {
+      if (data[property].slug === slug) {
+        room = data[property].room;
+      }
+    }
+
+    return {
+      props: {
+        slug,
+        room,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+
+    return { props: {} };
+  }
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  try {
+    const res = await fetch(`${databaseURL}/${NodeName}.json`);
+    const data = await res.json();
+
+    if (!data || Object.keys(data).length === 0) {
+      console.error("Data not available");
+      return {
+        paths: [],
+        fallback: false,
+      };
+    }
+
+    const paths = Object.keys(data).map((property) => ({
+      params: { slug: data[property].slug },
+    }));
+
+    return {
+      paths,
+      fallback: false,
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
 };
 
 export default RoomPage;
