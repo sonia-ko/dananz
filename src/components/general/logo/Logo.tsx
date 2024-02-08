@@ -2,13 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-interface LogoMobileProps {
-  //   onMenuOpen: () => void;
-  //   displayHeader: boolean;
+interface LogoProps {
   onClick?: () => void;
 }
 
-const Logo: React.FC<LogoMobileProps> = ({ onClick }) => {
+const Logo: React.FC<LogoProps> = ({ onClick }) => {
   return (
     <Link href="/" onClick={onClick}>
       <Image
