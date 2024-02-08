@@ -14,9 +14,6 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
   const [currentImg, setCurrentImg] = useState(0);
   const slidesNum = images.length;
 
-  console.log(currentImg);
-  console.log(slidesNum);
-
   const goToNextSlide = () => {
     setCurrentImg((prevIndex) => (prevIndex + 1) % images.length);
   };
