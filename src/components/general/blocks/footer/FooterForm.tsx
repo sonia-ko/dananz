@@ -41,10 +41,8 @@ const FooterForm: React.FC = () => {
           },
           body: JSON.stringify({ email }),
         });
-        console.log("Email added successfully!");
         setMessage("Thank you for subscribing to our newsletters!");
       } else {
-        console.log(`Email ${email} already exists in the database.`);
         setMessage("You have already been subscribed to our newsletters!");
       }
       setTimeout(() => {

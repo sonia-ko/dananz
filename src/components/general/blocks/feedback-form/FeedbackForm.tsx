@@ -76,9 +76,7 @@ const FeedbackForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const phoneNum = phoneNumber.replace(/\D/g, "");
-    const numericNumber = parseInt(phoneNum, 10);
 
-    console.log(numericNumber);
     const feedback: feedback = {
       firstName,
       lastName,

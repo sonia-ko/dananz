@@ -82,7 +82,6 @@ const RoomPage: React.FC<RoomProps> = ({ slug, props }) => {
 
   const { data, error } = useSWR(`${databaseURL}/${NodeName}.json`, (url) =>
     fetch(url).then((res) => {
-      console.log(res);
       return res.json();
     })
   );
@@ -98,7 +97,6 @@ const RoomPage: React.FC<RoomProps> = ({ slug, props }) => {
       }
     } else {
       setRoomNotFound(true);
-      console.log("room not found");
     }
   }, [data, error]);
 

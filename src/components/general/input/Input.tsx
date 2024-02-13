@@ -51,7 +51,6 @@ const Input: React.FC<InputProps> = ({
   ) => {
     if (select) {
       const inputValue = e.target.value;
-      console.log("select value:" + inputValue);
       select.onSelectChange(inputValue);
     }
   };
